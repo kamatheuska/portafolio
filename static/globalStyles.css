@@ -214,12 +214,14 @@ SYNTAX REMAINDER FOR GRID:
   border: none;
 }
 .button__small {
-  border: 2px solid #ddd;
+  background-color: #FFF;
+  border: 2px solid #204775;
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  color: #3C3C3B;
-  width: 10rem;
-  border-radius: 4px;  
+  color: #204775;
+  width: 15rem;
+  border-radius: 4px;
+  transition: all 1s ease;
 }
 /*=========================*\
   #CONTAINERS AND FRAMES

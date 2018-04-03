@@ -7,7 +7,6 @@ yarn-error.log*
 /test/unit/coverage/
 /test/e2e/reports/
 selenium-debug.log
-*.sublime*
 
 # Editor directories and files
 .idea
@@ -16,3 +15,5 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+*.sublime*
+*.svg
