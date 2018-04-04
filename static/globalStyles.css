@@ -216,10 +216,11 @@ SYNTAX REMAINDER FOR GRID:
 .button__small {
   background-color: #FFF;
   border: 2px solid #204775;
-  padding: 1rem 2rem;
+  padding: 6px;
   font-size: 1.1rem;
   color: #204775;
-  width: 15rem;
+  width: 65%;
+  margin-top: 1rem;
   border-radius: 4px;
   transition: all 1s ease;
 }
@@ -259,6 +260,10 @@ SYNTAX REMAINDER FOR GRID:
 .input__number {
   width: 6rem;
 }
+.input__text--large {
+  padding: 6px;
+  width: 65%;
+}  
 
 /*=========================*\
   #FONT STYLES

@@ -8,47 +8,47 @@
       <h5 v-if="error.status">{{ error.msg }}</h5>
     </div>
     <div class="Weather__container grid"
-         :class="weatherContainerColor" id="test1">
+         :class="weatherContainerColor">
       <transition name="fade">
-      <div v-if="weather.show" id="test2">
-        <div class="Weather__icons" id="test3">
-          <icon-sun v-if="weather.icon['clear-day']"></icon-sun>
-          <icon-moon v-if="weather.icon['clear-night']"></icon-moon>
-          <icon-cloud v-if="weather.icon['cloudy']"></icon-cloud>
-          <icon-sunrain v-if="weather.icon['partly-cloudy-day']"></icon-sunrain>
-          <icon-moonrain v-if="weather.icon['partly-cloudy-night']"></icon-moonrain>
-          <icon-rain v-if="weather.icon['rain']"></icon-rain>
-          <icon-snow v-if="weather.icon['snow']"></icon-snow>
-          <icon-wind v-if="weather.icon['wind']"></icon-wind>
-          <icon-storm v-if="weather.icon['thunder']"></icon-storm>
+        <div v-if="weather.show">
+          <div class="Weather__icons" id="test3">
+            <icon-sun v-if="weather.icon['clear-day']"></icon-sun>
+            <icon-moon v-if="weather.icon['clear-night']"></icon-moon>
+            <icon-cloud v-if="weather.icon['cloudy']"></icon-cloud>
+            <icon-sunrain v-if="weather.icon['partly-cloudy-day']"></icon-sunrain>
+            <icon-moonrain v-if="weather.icon['partly-cloudy-night']"></icon-moonrain>
+            <icon-rain v-if="weather.icon['rain']"></icon-rain>
+            <icon-snow v-if="weather.icon['snow']"></icon-snow>
+            <icon-wind v-if="weather.icon['wind']"></icon-wind>
+            <icon-storm v-if="weather.icon['thunder']"></icon-storm>
+          </div>
+          <div class="Weather__data">
+            <div>
+              <span class="Weather__data--temp h--bold">
+                {{ weather.currently.temperature | toFixedDecimal(0) }}<span>{{weather.unitTemp.current}}
+              </span></span>
+            </div>
+            <div>
+              <span class="button__tiny"
+                  @click="changeUnits()">Change to {{weather.unitTemp.other}}</span>
+            </div>
+            <div class="Weather__data--sum">
+              <span>{{ weather.currently.summary }}</span>
+            </div>
+          </div>
         </div>
-        <div class="Weather__data">
-          <div>
-            <span class="Weather__data--temp h--bold">
-              {{ weather.currently.temperature | toFixedDecimal(0) }}<span>{{weather.unitTemp.current}}
-            </span></span>
-          </div>
-          <div>
-            <span class="button__tiny"
-                @click="changeUnits()">Change to {{weather.unitTemp.other}}</span>
-          </div>
-          <div class="Weather__data--sum">
-            <span>{{ weather.currently.summary }}</span>
-          </div>
-        </div>
-      </div>
       </transition>
     </div>
-    <div>
+    <transition name="fade">
       <div v-if="weather.show">
         <span>Wind <strong>{{ weather.currently.windSpeed | toFixedDecimal(1) }}km/h</strong></span><br>
         <span>Precip. <strong>{{ weather.currently.precipProbability }}</strong></span><br>
       </div>
-      <div class="Weather__footer grid__row">
-        <button class="button__small" @click="fetchWeather()">see my weather</button>
-        <input type="text" placeholder="New York">
-        <button class="button__small">check other weather</button>
-      </div>
+    </transition>
+    <div class="Weather__controler">
+      <button class="button__small" @click="fetchLocalWeather()">My Location</button><br>
+      <button class="button__small">Other Places</button>
+      <input class="input__text--large"type="text" placeholder="New York"><br>
     </div>
   </div>
 </template>
@@ -183,33 +183,45 @@ export default {
       }
     },
 
-    fetchWeather () {
+    sendDataToServer (data) {
+      return axios
+        .create()
+        .post('/api/weather', {
+          baseURL: 'http://localhost:5000',
+          data: {
+            coords: {
+              lat: data.lat,
+              long: data.long
+            },
+            units: 'si',
+            exclude: 'minutely,hourly,daily,alerts,flags'
+          }
+        })
+    },
+
+    weatherSuccessHandler (res) {
+      this.weather = Object.assign({}, this.weather, res.data)
+      this.weather.success.status = !this.weather.success.status
+      this.showWeatherIcon(res.data.currently.icon)
+      this.weather.show = true
+    },
+
+    errorHandler (error) {
+      console.log('Error on fetchLocalWeather', error)
+      this.weather.error.status = !this.weather.error.status
+    },
+
+    fetchLocalWeather () {
       this.getUserPosition()
         .then((data) => {
           console.log(data)
-          return axios
-            .create()
-            .post('/api/weather', {
-              baseURL: 'http://localhost:5000',
-              data: {
-                coords: {
-                  lat: data.lat,
-                  long: data.long
-                },
-                units: 'si',
-                exclude: 'minutely,hourly,daily,alerts,flags'
-              }
-            })
+          return this.sendDataToServer(data)
         })
         .then((res) => {
-          this.weather = Object.assign({}, this.weather, res.data)
-          this.weather.success.status = !this.weather.success.status
-          this.showWeatherIcon(res.data.currently.icon)
-          this.weather.show = true
+          this.weatherSuccessHandler(res)
         })
         .catch((error) => {
-          console.log('Error on fetchWeather', error)
-          this.weather.error.status = !this.weather.error.status
+          this.errorHandler(error)
         })
     },
 
@@ -303,9 +315,14 @@ export default {
 }
 
 .Weather__title      { font-family: 'montserratmedium', Arial, sans-serif }
-.Weather__footer     { align-self: end }
 .Weather__data       { padding-top: 2rem }
 .Weather__data--temp { font-size: 2.5rem }
+
+.Weather__controler {
+  width: 100%;
+  grid-row: 3;
+  grid-column: 4 / -1;
+}
 
 /*............NIGHT............*/
 .Weather__night .Weather__container { background-color: #22657499 }
