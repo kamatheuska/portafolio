@@ -2,7 +2,8 @@
   <div class="Weather container grid"
        :class="setBackground">
     <div class="Weather__title grid__row">
-      <h1>WEATHER APP</h1>
+      <h1>WEATHER</h1>
+      <h4>APP</h4>
       <h5 v-if="pos.error.status">{{ pos.error.msg }}</h5>
       <h5 v-if="error.status">{{ error.msg }}</h5>
     </div>
@@ -11,37 +12,43 @@
       <transition name="fade">
       <div v-if="weather.show" id="test2">
         <div class="Weather__icons" id="test3">
-          <icon-sun v-if="weather.icon.sun"></icon-sun>
-          <icon-cloud v-if="weather.icon.cloud"></icon-cloud>
-          <icon-rain v-if="weather.icon.rain"></icon-rain>
-          <icon-storm v-if="weather.icon.storm"></icon-storm>
-          <icon-sunrain v-if="weather.icon.sunrain"></icon-sunrain>
-          <icon-snow v-if="weather.icon.snow"></icon-snow>
-          <icon-moon v-if="weather.icon.moon"></icon-moon>
-          <icon-moonrain v-if="weather.icon.moonrain"></icon-moonrain>
-          <icon-wind v-if="weather.icon.wind"></icon-wind>
+          <icon-sun v-if="weather.icon['clear-day']"></icon-sun>
+          <icon-moon v-if="weather.icon['clear-night']"></icon-moon>
+          <icon-cloud v-if="weather.icon['cloudy']"></icon-cloud>
+          <icon-sunrain v-if="weather.icon['partly-cloudy-day']"></icon-sunrain>
+          <icon-moonrain v-if="weather.icon['partly-cloudy-night']"></icon-moonrain>
+          <icon-rain v-if="weather.icon['rain']"></icon-rain>
+          <icon-snow v-if="weather.icon['snow']"></icon-snow>
+          <icon-wind v-if="weather.icon['wind']"></icon-wind>
+          <icon-storm v-if="weather.icon['thunder']"></icon-storm>
         </div>
         <div class="Weather__data">
           <div>
             <span class="Weather__data--temp h--bold">
               {{ weather.currently.temperature | toFixedDecimal(0) }}<span>{{weather.unitTemp.current}}
-            </span>
-              <span class="button__tiny"
-                  @click="changeUnits()">{{weather.unitTemp.other}}</span></span><br>
+            </span></span>
+          </div>
+          <div>
+            <span class="button__tiny"
+                @click="changeUnits()">Change to {{weather.unitTemp.other}}</span>
           </div>
           <div class="Weather__data--sum">
             <span>{{ weather.currently.summary }}</span>
-          </div>
-          <div>
-            <span>Wind <strong>{{ weather.currently.windSpeed | toFixedDecimal(1) }}km/h</strong></span><br>
-            <span>Precip. <strong>{{ weather.currently.precipProbability }}</strong></span><br>
           </div>
         </div>
       </div>
       </transition>
     </div>
-    <div class="Weather__footer grid__row">
-      <button class="button__small" @click="fetchWeather()">see my weather</button>
+    <div>
+      <div v-if="weather.show">
+        <span>Wind <strong>{{ weather.currently.windSpeed | toFixedDecimal(1) }}km/h</strong></span><br>
+        <span>Precip. <strong>{{ weather.currently.precipProbability }}</strong></span><br>
+      </div>
+      <div class="Weather__footer grid__row">
+        <button class="button__small" @click="fetchWeather()">see my weather</button>
+        <input type="text" placeholder="New York">
+        <button class="button__small">check other weather</button>
+      </div>
     </div>
   </div>
 </template>
@@ -114,16 +121,19 @@ export default {
           msg: 'Everything good!'
         },
         icon: {
-          sun: false,
-          moon: false,
-          cloud: false,
-          rain: false,
-          storm: false,
-          sunrain: false,
-          snow: false,
-          wind: false,
-          moonrain: false
+          'clear-day': false,
+          'clear-night': false,
+          'cloudy': false,
+          'fog': false,
+          'partly-cloudy-day': false,
+          'partly-cloudy-night': false,
+          'rain': false,
+          'sleet': false,
+          'snow': false,
+          'wind': false,
+          'thunder': false
         },
+        iconCurrent: '',
         unitTemp: {
           current: 'ºC',
           other: 'ºF'
@@ -134,12 +144,15 @@ export default {
     }
   },
   computed: {
+
     ...mapState([ 'darksky' ]),
+
     setBackground () {
       return {
         'Weather__night': this.currentTime.hours < 6 || this.currentTime.hours > 19
       }
     },
+
     weatherContainerColor () {
       return {
         'Weather__container--sun': this.weather.icon.sun,
@@ -155,15 +168,21 @@ export default {
     }
   },
   methods: {
+
     changeUnits () {
       if (this.weather.unitTemp.current === 'ºC') {
         this.weather.unitTemp.current = 'ºF'
         this.weather.unitTemp.other = 'ºC'
+        this.weather.currently.temperature =
+          (this.weather.currently.temperature * 9 / 5) + 32
       } else if (this.weather.unitTemp.current === 'ºF') {
         this.weather.unitTemp.current = 'ºC'
         this.weather.unitTemp.other = 'ºF'
+        this.weather.currently.temperature =
+          (this.weather.currently.temperature - 32) * 5 / 9
       }
     },
+
     fetchWeather () {
       this.getUserPosition()
         .then((data) => {
@@ -193,6 +212,7 @@ export default {
           this.weather.error.status = !this.weather.error.status
         })
     },
+
     getUserPosition () {
       return new Promise((resolve, reject) => {
         if (!navigator.geolocation) {
@@ -215,44 +235,20 @@ export default {
         }
       })
     },
-    showWeatherIcon (icon) {
-      switch (icon) {
-        case 'sleet':
-        case 'clear-day':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.sun = !this.weather.icon.sun)
-          break
-        case 'clear-night':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.moon = !this.weather.icon.moon)
-          break
-        case 'rain':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.rain = !this.weather.icon.rain)
-          break
-        case 'snow':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.snow = !this.weather.icon.snow)
-          break
-        case 'wind':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.wind = !this.weather.icon.wind)
-          break
-        case 'fog':
-        case 'cloudy':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.rain = !this.weather.icon.rain)
-          break
-        case 'partly-cloudy-day':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.sunrain = !this.weather.icon.sunrain)
-          break
-        case 'partly-cloudy-night':
-          this.showIconAndHideOthers()
-            .then(() => this.weather.icon.moonrain = !this.weather.icon.moonrain)
-          break
-      }
+
+    showWeatherIcon (responseIcon) {
+      let iconNames = Object.keys(this.weather.icon)
+
+      iconNames.forEach((iconName, i) => {
+        if (iconName === responseIcon) {
+          console.log(iconName, i)
+          this.showIconAndHideOthers().then(() => {
+            this.weather.icon[iconName] = !this.weather.icon[iconName]
+          })
+        }
+      })
     },
+
     showIconAndHideOthers () {
       let keys = Object.keys(this.weather.icon)
       keys.forEach((key) => this.weather.icon[key] = false)
@@ -269,7 +265,7 @@ export default {
 
 <style scoped>
 .Weather {
-  grid-template-columns: 1fr repeat(2,2fr) 1fr;
+  grid-template-columns: 1fr repeat(2,2fr) repeat(3, 1fr);
   grid-template-rows: 1fr repeat(2,2fr) 1fr;
   grid-gap: 1rem;
   justify-items: center;
@@ -287,20 +283,9 @@ export default {
   height: 60vh;
   width: 60vh;
 }
-.Weather__data--sum  {
-  font-size: 2rem;
-  margin: 0.7rem 0;
-}
-.Weather__title { font-family: 'montserratmedium', Arial, sans-serif }
-.Weather__data  { padding-top: 2rem }
-.Weather__data--temp { font-size: 2.5rem }
-.Weather__footer     { align-self: end }
-
+/*............POSIBLE BACKGROUNDS DEPENDING ON ICON............*/
 .Weather__container--sun       { background-color: #E0FAFF }
 .Weather__container--storm     { background-color: #EFDFFF }
-
-.Weather__container--cloud,
-.Weather__container--sunrain   { background-color: #D0F3FF }
 
 .Weather__container--rain,
 .Weather__container--snow,
@@ -308,6 +293,19 @@ export default {
 
 .Weather__container--moon,
 .Weather__container--moonrain  { background-color: #B9F6FF }
+
+.Weather__container--cloud,
+.Weather__container--sunrain   { background-color: #D0F3FF }
+
+.Weather__data--sum  {
+  font-size: 2rem;
+  margin: 0.7rem 0;
+}
+
+.Weather__title      { font-family: 'montserratmedium', Arial, sans-serif }
+.Weather__footer     { align-self: end }
+.Weather__data       { padding-top: 2rem }
+.Weather__data--temp { font-size: 2.5rem }
 
 /*............NIGHT............*/
 .Weather__night .Weather__container { background-color: #22657499 }
