@@ -43,13 +43,12 @@ export default {
   15%, 100% { fill: #446a97 }
 }
 .icon__storm     { height: 100% }
-.icon__storm-svg { height: 200px }
+.icon__storm-svg { height: 20vh }
 .icon__storm #thunder1 {
   animation: lightningHits 2s linear infinite;
 }
 .icon__storm #thunder2 {
   animation: lightningHits 3s linear infinite;
 }
-
 
 </style>

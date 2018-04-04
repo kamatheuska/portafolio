@@ -42,7 +42,7 @@
         <path style="fill:#5579a6"
               d="m226 218.8c22.19 1.213 41.92-14.43 46.78-33.8 7.222-23.45-3.45-52.92-29.87-60.48 1.258-37.88-31.9-82.81-77.1-81.92-35.39 2.675-61.47 23.73-69.79 58.62 0 0-60.56-9.914-73.79 48-1.485 14.97-1.045 31.26 9.038 43.87 13.77 18.84 39.24 27.06 63.2 26.1"/>
       </g>
-    </svg>     
+    </svg>
   </div>
 </template>
 
@@ -71,7 +71,7 @@ export default {
   width: 100%;
 }
 .icon__sunrain-svg {
-  height: 220px;
+  height: 20vh;
   width: 100%;
 }
 .icon__sunrain-svg .drop1 { animation: dropsColor 2s linear infinite }

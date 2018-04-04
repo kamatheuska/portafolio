@@ -229,7 +229,7 @@ SYNTAX REMAINDER FOR GRID:
 \*=========================*/
 .container {
   height: 100%;
-  padding: 3rem 3rem;
+  padding: 1.5rem 1.5rem;
 }
 .container__frame {
   border: 1px solid #b9b9b9;
@@ -263,7 +263,8 @@ SYNTAX REMAINDER FOR GRID:
 /*=========================*\
   #FONT STYLES
 \*=========================*/
-.h--bold { font-family: 'montserratsemibold', Arial, sans-serif }
+.h--semibold { font-family: 'montserratsemibold', Arial, sans-serif }
+.h--bold { font-family: 'montserratbold', Arial, sans-serif }
 .h6--italic {
   font-family: 'montserratextralight_italic', Arial, sans-serif;
   font-size: 1rem;

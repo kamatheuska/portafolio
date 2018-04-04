@@ -21,7 +21,6 @@
       </g>
     </svg>
 
- 
   </div>
 </template>
 
@@ -45,12 +44,11 @@ export default {
   }
 }
 .icon__cloud     { height: 100% }
-.icon__cloud-svg { height: 200px }
+.icon__cloud-svg { height: 20vh }
 .icon__cloud--back {
   background-color:#556A8A;
   animation: cloudMoves 2s linear infinite;
   animation-direction: alternate;
 }
-
 
 </style>

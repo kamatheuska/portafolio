@@ -29,9 +29,6 @@
         class="icon__snowflake4"/>
       </g>
     </svg>
-
-
- 
   </div>
 </template>
 
@@ -56,11 +53,10 @@ export default {
   }
 }
 .icon__snow     { height: 100% }
-.icon__snow-svg { height: 200px }
+.icon__snow-svg { height: 20vh }
 .icon__snowflake1 { animation: snowFall 2s 1s ease infinite }
 .icon__snowflake2 { animation: snowFall 2s 2s ease infinite }
 .icon__snowflake3 { animation: snowFall 2s 2.5s ease infinite }
 .icon__snowflake4 { animation: snowFall 2s 4s ease infinite }
-
 
 </style>
