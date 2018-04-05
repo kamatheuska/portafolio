@@ -5,12 +5,14 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const app = express()
 
-const { darksky, geocode } = require('./api')
+const darksky_url = process.env.DARKSKY_URL
+const geocode_api_key = process.env.GEOCODE_API_KEY
+const geocode_url = process.env.GEOCODE_URL
+
 const dist = path.join(__dirname, '..', 'dist')
 
 app.use(express.static(dist))
 app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: true })) 
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
@@ -19,7 +21,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/weather/local', (req, res) => {
   let { coords, units, exclude } = req.body.data
-  let apiUrl =`${darksky.url}${coords.lat},${coords.lng}`
+  let apiUrl =`${darksky_url}${coords.lat},${coords.lng}`
   let config = {
     params: { units, exclude }
   }
@@ -28,8 +30,6 @@ app.post('/api/weather/local', (req, res) => {
     .create()
     .get(apiUrl, config)
     .then((json) => {
-      console.log('----------------------------------------------------')
-      console.log('RESPONSE FROM DARKSKY',json.data)
       res.status(200).send(json.data)
     })
     .catch((err) => {
@@ -39,16 +39,15 @@ app.post('/api/weather/local', (req, res) => {
 
 app.post('/api/weather/other', (req, res) => {
   let { address, units, exclude  } = req.body.data
-  let googleUrl = `${ geocode.url }`;
   let configGeocode = {
     params: {
       address,
-      key: geocode.apikey
+      key: geocode_api_key
     }
   }
 
   let requestWeather = (coords) => {
-    let darkSkyUrl =`${darksky.url}${coords.lat},${coords.lng}`
+    let darkSkyUrl =`${darksky_url}${coords.lat},${coords.lng}`
     let configWeather = {
       params: { units, exclude }
     }
@@ -65,19 +64,15 @@ app.post('/api/weather/other', (req, res) => {
 
   axios
     .create()
-    .get(googleUrl, configGeocode)
+    .get(geocode_url, configGeocode)
     .then((json) => {
       return requestWeather(json.data.results[0].geometry.location)
     })
     .then((json) => {
-      console.log('----------------------------------------------------')
-      console.log('RESPONSE FROM DARKSKY',json.data)
       res.status(200).send(json.data)
     })
     .catch((err) => {
       res.status(400).send(err)
     })
-
-
 })
 module.exports = app
