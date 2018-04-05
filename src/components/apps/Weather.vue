@@ -2,49 +2,44 @@
   <div class="Weather container grid"
        :class="setBackground">
     <div class="Weather__title grid__row">
-      <h1>WEATHER</h1>
-      <h4>APP</h4>
+      <h1>WEATHERZILLA</h1>
       <h5 v-if="geolocation.pos.status.error">{{ geolocation.pos.status.msg }}</h5>
       <h5 v-if="weather.status.error">{{ weather.status.msg.error }}</h5>
     </div>
-    <div class="Weather__container grid">
-      <transition name="fade">
-        <div v-if="weather.show">
-          <div class="Weather__icons" id="test3">
-            <icon-sun v-if="weather.icon['clear-day']"></icon-sun>
-            <icon-moon v-if="weather.icon['clear-night']"></icon-moon>
-            <icon-cloud v-if="weather.icon['cloudy']"></icon-cloud>
-            <icon-sunrain v-if="weather.icon['partly-cloudy-day']"></icon-sunrain>
-            <icon-moonrain v-if="weather.icon['partly-cloudy-night']"></icon-moonrain>
-            <icon-rain v-if="weather.icon['rain']"></icon-rain>
-            <icon-snow v-if="weather.icon['snow']"></icon-snow>
-            <icon-wind v-if="weather.icon['wind']"></icon-wind>
-            <icon-storm v-if="weather.icon['thunder']"></icon-storm>
-          </div>
-          <div class="Weather__data">
-            <div>
-              <span class="Weather__data--temp h--bold">
-                {{ weather.currently.temperature | toFixedDecimal(0) }}<span>{{ weather.unitTemp.current }}
-              </span></span>
-            </div>
-            <div>
-              <span class="button__tiny"
-                  @click="changeUnits()">Change to {{ weather.unitTemp.other }}</span>
-            </div>
-            <div class="Weather__data--sum">
-              <span>{{ weather.currently.summary }}</span>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
     <transition name="fade">
-      <div v-if="weather.show">
-        <span>Wind <strong>{{ weather.currently.windSpeed | toFixedDecimal(1) }}km/h</strong></span><br>
-        <span>Precip. <strong>{{ weather.currently.precipProbability }}</strong></span><br>
+      <div class="Weather__icons" v-if="weather.show">
+        <icon-sun v-if="weather.icon['clear-day']"></icon-sun>
+        <icon-moon v-if="weather.icon['clear-night']"></icon-moon>
+        <icon-cloud v-if="weather.icon['cloudy']"></icon-cloud>
+        <icon-sunrain v-if="weather.icon['partly-cloudy-day']"></icon-sunrain>
+        <icon-moonrain v-if="weather.icon['partly-cloudy-night']"></icon-moonrain>
+        <icon-rain v-if="weather.icon['rain']"></icon-rain>
+        <icon-snow v-if="weather.icon['snow']"></icon-snow>
+        <icon-wind v-if="weather.icon['wind']"></icon-wind>
+        <icon-storm v-if="weather.icon['thunder']"></icon-storm>
       </div>
     </transition>
-    <div class="Weather__controler">
+    <transition name="fade">
+      <div class="Weather__data" v-if="weather.show">
+        <div>
+          <span class="Weather__data--temp h--bold">
+            {{ weather.currently.temperature | toFixedDecimal(0) }}<span>{{ weather.unitTemp.current }}
+          </span></span>
+        </div>
+        <div>
+          <span class="button__tiny"
+              @click="changeUnits()">Change to {{ weather.unitTemp.other }}</span>
+        </div>
+        <div class="Weather__data--sum">
+          <span>{{ weather.currently.summary }}</span>
+        </div>
+        <div v-if="weather.show" class="Weather__data--other">
+          <span>Wind <strong>{{ weather.currently.windSpeed | toFixedDecimal(1) }}km/h</strong></span><br>
+          <span>Precip. <strong>{{ weather.currently.precipProbability }}</strong></span><br>
+        </div>
+      </div>
+    </transition>
+    <div class="Weather__controller">
       <button class="button__small" @click="fetchLocalWeather()">My Location</button><br>
       <button class="button__small" @click="fetchOthersWeather()">Other Places</button>
       <input v-model="otherLocation"
@@ -174,26 +169,6 @@ export default {
         .catch((error) => { this.errorHandler(error) })
     },
 
-    // fetchOthersWeather () {
-    //   let apiUrl = 'api/weather/other'
-    //   let config = {
-    //     baseURL: 'http://localhost:5000/',
-    //     data: {
-    //       address: this.otherLocation,
-    //       units: 'si',
-    //       exclude: 'minutely,hourly,daily,alerts,flags'
-    //     }
-    //   }
-    //   this.sendDataToServer(apiUrl, config)
-    //     .then((res) => {
-    //       console.log(res)
-    //       this.weatherSuccessHandler(res)
-    //     })
-    //     .catch((error) => {
-    //       this.errorHandler(error)
-    //     })
-    // },
-
     showWeatherIcon (responseIcon) {
       let iconNames = Object.keys(this.weather.icon)
 
@@ -236,55 +211,43 @@ export default {
 
 <style scoped>
 .Weather {
-  grid-template-columns: 1fr repeat(2,2fr) repeat(3, 1fr);
-  grid-template-rows: 1fr repeat(2,2fr) 1fr;
+  grid-template-columns: repeat(6, 1fr);;
+  grid-template-rows: repeat(6, 1fr);
   grid-gap: 1rem;
   justify-items: center;
   transition: all 1s ease;
   color: #204775;
   text-align: center;
+  font-size: 1.3rem;
 }
-.Weather__container {
-  border-radius: 50%;
+.Weather__icons {
   grid-column: 2 / span 2;
   grid-row: 2 / span 2;
   padding: 2rem;
   justify-items: center;
   text-align: center;
-  height: 60vh;
-  width: 60vh;
+  height: 38vh;
 }
 /*............POSIBLE BACKGROUNDS DEPENDING ON ICON............*/
-.Weather__container--sun       { background-color: #E0FAFF }
-.Weather__container--storm     { background-color: #EFDFFF }
-
-.Weather__container--rain,
-.Weather__container--snow,
-.Weather__container--wind      { background-color: #CCFFFA }
-
-.Weather__container--moon,
-.Weather__container--moonrain  { background-color: #B9F6FF }
-
-.Weather__container--cloud,
-.Weather__container--sunrain   { background-color: #D0F3FF }
-
+.Weather__data       {
+  padding-top: 2rem;
+  grid-column: 4 / span 2;
+  grid-row: 2 / span 2;
+}
 .Weather__data--sum  {
-  font-size: 2rem;
+  font-size: 1.6em;
   margin: 0.7rem 0;
 }
-
 .Weather__title      { font-family: 'montserratmedium', Arial, sans-serif }
-.Weather__data       { padding-top: 2rem }
-.Weather__data--temp { font-size: 2.5rem }
+.Weather__data--temp { font-size: 2.2em }
 
-.Weather__controler {
+.Weather__controller {
   width: 100%;
-  grid-row: 3;
-  grid-column: 4 / -1;
+  grid-column: 4 / span 2;
+  grid-row: 5 / -1;
 }
 
 /*............NIGHT............*/
-.Weather__night .Weather__container { background-color: #22657499 }
 .Weather__night {
   background-color: #0B1A2C;
   color: #F2F2F2;
@@ -299,24 +262,62 @@ export default {
   border: 2px solid #F2F2F2;
   color: #0B1A2C;
 }
-.button__small:hover {
-  background-color: #3B9ED7;
-  border: 2px solid #FFF;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  color:  #FFF;
+
+/*............MEDIA QUERIES............*/
+@media only screen
+  and (min-device-width: 320px)
+  and (orientation: portrait) {
+  .Weather {
+    padding: 0.4rem;
+    grid-gap: 0.2rem;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+  }
+  .Weather__title { font-size: 0.6em }
+  .Weather__icons {
+    grid-column: 1 / -1;
+    grid-row: 2 / span 1;
+    padding: 0.2rem;
+    height: 23vh;
+  }
+  .Weather__data {
+    grid-column: 1 / -1;
+    grid-row: 3 / span 1;
+  }
+  .Weather__controller {
+    grid-column: 1 / -1;
+    grid-row: 4 / span 1;
+  }
 }
-.button__tiny {
-  cursor: pointer;
-  align-self: center;
-  margin-left: 0.5rem;
-  border: none;
-  font-size: 1.1rem;
-  padding: 0;
-  color: #3B9ED7;
-  width: 5rem;
-  min-height: 2.2rem;
-  border-radius: 50%;
-  transition: all 1s ease;
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 812px)
+  and (orientation: landscape) {
+  .Weather {
+    padding: 0.4rem;
+    grid-gap: 0.2rem;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+  }
+  .Weather__title {
+    font-size: 0.6em;
+    grid-column: 1 / -1;
+  }
+  .Weather__icons {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    padding: 0;
+    height: 23vh;
+  }
+  .Weather__data {
+    grid-column: 2 / -1;
+    grid-row: 2 / span 2;
+    padding: 0;
+  }
+  .Weather__controller {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+  }
 }
 </style>

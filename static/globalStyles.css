@@ -224,6 +224,26 @@ SYNTAX REMAINDER FOR GRID:
   border-radius: 4px;
   transition: all 1s ease;
 }
+.button__small:hover {
+  background-color: #3B9ED7;
+  border: 2px solid #FFF;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color:  #FFF;
+}
+.button__tiny {
+  cursor: pointer;
+  align-self: center;
+  margin-left: 0.5rem;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0;
+  color: #3B9ED7;
+  width: 5rem;
+  min-height: 2.2rem;
+  border-radius: 50%;
+  transition: all 1s ease;
+}
 /*=========================*\
   #CONTAINERS AND FRAMES
   #BOX
@@ -276,7 +296,7 @@ SYNTAX REMAINDER FOR GRID:
 }
 
 /*=========================*\
-  #ELEMENTS
+  #MEDIA QUERIES
 \*=========================*/
 
 /*=========================*\
