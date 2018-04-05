@@ -49,7 +49,7 @@ export default {
   width: 100%;
 }
 .icon__wind-svg1 {
-  height: 20vh;
+  height: 100%;
   width: 100%;
 }
 

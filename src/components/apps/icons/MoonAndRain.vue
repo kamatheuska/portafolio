@@ -103,7 +103,7 @@ export default {
   width: 100%;
 }
 .icon__moonrain-svg {
-  height: 20vh;
+  height: 100%;
   width: 100%;
 }
 .icon__moonrain-svg .drop1 { animation: dropsColor 2s linear infinite }

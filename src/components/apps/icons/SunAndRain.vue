@@ -71,7 +71,7 @@ export default {
   width: 100%;
 }
 .icon__sunrain-svg {
-  height: 20vh;
+  height: 100%;
   width: 100%;
 }
 .icon__sunrain-svg .drop1 { animation: dropsColor 2s linear infinite }

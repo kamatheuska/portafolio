@@ -54,7 +54,7 @@ export default {
 .icon__sun-svg {
   /*transform-origin: center;*/
   transform: scale(2);
-  height: 20vh;
+  height: 100%;
   width: 100%;
   animation: sunBeams 10s linear infinite;
 }

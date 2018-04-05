@@ -40,7 +40,7 @@ export default {
   }
 }
 .icon__rain     { height: 100% }
-.icon__rain-svg { height: 20vh }
+.icon__rain-svg { height: 100% }
 .icon__rain-svg .drop1 { animation: dropsColor 2s linear infinite }
 .icon__rain-svg .drop2 { animation: dropsColor 4s linear infinite }
 .icon__rain-svg .drop3 { animation: dropsColor 3s linear infinite }

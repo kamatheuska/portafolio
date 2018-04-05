@@ -71,7 +71,7 @@ export default {
   width: 100%;
 }
 .icon__moon-svg {
-  height: 20vh;
+  height: 100%;
   width: 100%;
 }
 .icon__moon-body {

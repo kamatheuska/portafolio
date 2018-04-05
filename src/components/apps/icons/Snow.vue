@@ -53,7 +53,7 @@ export default {
   }
 }
 .icon__snow     { height: 100% }
-.icon__snow-svg { height: 20vh }
+.icon__snow-svg { height: 100% }
 .icon__snowflake1 { animation: snowFall 2s 1s ease infinite }
 .icon__snowflake2 { animation: snowFall 2s 2s ease infinite }
 .icon__snowflake3 { animation: snowFall 2s 2.5s ease infinite }
