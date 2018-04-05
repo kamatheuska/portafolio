@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 // import * as Cookies from 'js-cookie';
 // import createPersistedState from 'vuex-persistedstate';
@@ -11,8 +12,8 @@ export default new Vuex.Store({
   state: {
     geolocation: {
       pos: {
-        error: {
-          status: false,
+        status: {
+          error: false,
           msg: 'Unable to retrieve your location'
         },
         lat: '',
@@ -23,16 +24,47 @@ export default new Vuex.Store({
         success: 'No problem with your browser',
         error: 'Geolocation is not supported by your browser'
       }
+    },
+    configApi: {
+      baseURL: 'http://localhost:5000/',
+      data: {
+        units: 'si',
+        exclude: 'minutely,hourly,daily,alerts,flags'
+      }
+    },
+    weatherApi: {
+      url: {
+        local: 'api/weather/local',
+        other: 'api/weather/other'
+      }
     }
   },
   getters: {
+    getFullConfigForLocal: ({ configApi }) =>
+      (pos, service) => ({
+        data: {
+          units: configApi.data.units,
+          exclude: configApi.data.exclude,
+          coords: { lat: pos.lat, lng: pos.lng }
+        },
+        baseURL: configApi.baseURL
+      }),
 
+    getFullConfigForOther: ({ configApi }) =>
+      (address, service) => ({
+        data: {
+          units: configApi.data.units,
+          exclude: configApi.data.exclude,
+          address: address
+        },
+        baseURL: configApi.baseURL
+      })
   },
   mutations: {
     CONFIRM_GEOLOCATION_SUPPORT: state => { state.geolocation.clientError = false },
     NO_GEOLOCATION_SUPPORT: state => { state.geolocation.clientError = true },
-    HANDLE_GEOLOCATION_SUCCESS: state => { state.geolocation.pos.error.status = false },
-    HANDLE_GEOLOCATION_ERROR: state => { state.geolocation.pos.error.status = true },
+    HANDLE_GEOLOCATION_SUCCESS: state => { state.geolocation.pos.status.error = false },
+    HANDLE_GEOLOCATION_ERROR: state => { state.geolocation.pos.status.error = true },
     SET_USER_POSITION: (state, coords) => {
       state.geolocation.pos = {
         ...state.geolocation.pos,
@@ -42,6 +74,23 @@ export default new Vuex.Store({
     }
   },
   actions: {
+
+    sendDataToServer ({ getters, state, commit }, req) {
+      if (req.service === 'local') {
+        let config = getters.getFullConfigForLocal(req.pos, req.service)
+        let apiUrl = state.weatherApi.url[req.service]
+        return axios
+          .create()
+          .post(apiUrl, config)
+      } else if (req.service === 'other') {
+        let config = getters.getFullConfigForOther(req.location, req.service)
+        let apiUrl = state.weatherApi.url[req.service]
+        console.log('STORE', config, apiUrl)
+        return axios
+          .create()
+          .post(apiUrl, config)
+      }
+    },
 
     checkGeoSupport ({ state, commit }) {
       return new Promise((resolve, reject) => {

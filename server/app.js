@@ -28,6 +28,7 @@ app.post('/api/weather/local', (req, res) => {
     .create()
     .get(apiUrl, config)
     .then((json) => {
+      console.log('----------------------------------------------------')
       console.log('RESPONSE FROM DARKSKY',json.data)
       res.status(200).send(json.data)
     })
@@ -69,6 +70,8 @@ app.post('/api/weather/other', (req, res) => {
       return requestWeather(json.data.results[0].geometry.location)
     })
     .then((json) => {
+      console.log('----------------------------------------------------')
+      console.log('RESPONSE FROM DARKSKY',json.data)
       res.status(200).send(json.data)
     })
     .catch((err) => {

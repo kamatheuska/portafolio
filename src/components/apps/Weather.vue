@@ -4,11 +4,10 @@
     <div class="Weather__title grid__row">
       <h1>WEATHER</h1>
       <h4>APP</h4>
-      <h5 v-if="pos.error.status">{{ pos.error.msg }}</h5>
-      <h5 v-if="error.status">{{ error.msg }}</h5>
+      <h5 v-if="geolocation.pos.status.error">{{ geolocation.pos.status.msg }}</h5>
+      <h5 v-if="weather.status.error">{{ weather.status.msg.error }}</h5>
     </div>
-    <div class="Weather__container grid"
-         :class="weatherContainerColor">
+    <div class="Weather__container grid">
       <transition name="fade">
         <div v-if="weather.show">
           <div class="Weather__icons" id="test3">
@@ -25,12 +24,12 @@
           <div class="Weather__data">
             <div>
               <span class="Weather__data--temp h--bold">
-                {{ weather.currently.temperature | toFixedDecimal(0) }}<span>{{weather.unitTemp.current}}
+                {{ weather.currently.temperature | toFixedDecimal(0) }}<span>{{ weather.unitTemp.current }}
               </span></span>
             </div>
             <div>
               <span class="button__tiny"
-                  @click="changeUnits()">Change to {{weather.unitTemp.other}}</span>
+                  @click="changeUnits()">Change to {{ weather.unitTemp.other }}</span>
             </div>
             <div class="Weather__data--sum">
               <span>{{ weather.currently.summary }}</span>
@@ -47,15 +46,17 @@
     </transition>
     <div class="Weather__controler">
       <button class="button__small" @click="fetchLocalWeather()">My Location</button><br>
-      <button class="button__small">Other Places</button>
-      <input class="input__text--large"type="text" placeholder="New York"><br>
+      <button class="button__small" @click="fetchOthersWeather()">Other Places</button>
+      <input v-model="otherLocation"
+             class="input__text--large"
+             type="text"
+             placeholder="New York"><br>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 import Sun from './icons/Sun'
 import Moon from './icons/Moon'
@@ -83,25 +84,9 @@ export default {
   data () {
     return {
       currentTime: {
-        hours: new Date().getHours(),
-        night: true
+        hours: new Date().getHours()
       },
-      pos: {
-        error: {
-          status: false,
-          msg: 'Unable to retrieve your location'
-        },
-        lat: '',
-        long: ''
-      },
-      error: {
-        status: false,
-        msg: 'Geolocation is not supported by your browser'
-      },
-      success: {
-        status: false,
-        msg: 'No problem with your browser'
-      },
+      otherLocation: 'Bangkok',
       weather: {
         currently: {
           show: false,
@@ -112,13 +97,12 @@ export default {
           windSpeed: 0,
           cloudCover: 0
         },
-        error: {
-          status: false,
-          msg: 'There was a problem retrieving the weather...'
-        },
-        success: {
-          status: false,
-          msg: 'Everything good!'
+        status: {
+          error: false,
+          msg: {
+            success: 'Everything good!',
+            error: 'There was a problem retrieving the weather...'
+          }
         },
         icon: {
           'clear-day': false,
@@ -133,120 +117,82 @@ export default {
           'wind': false,
           'thunder': false
         },
-        iconCurrent: '',
         unitTemp: {
           current: 'ºC',
           other: 'ºF'
         },
         show: false
-      },
-      buttonFired: 0
+      }
     }
   },
   computed: {
 
-    ...mapState([ 'darksky' ]),
+    ...mapState([ 'geolocation' ]),
 
     setBackground () {
       return {
         'Weather__night': this.currentTime.hours < 6 || this.currentTime.hours > 19
       }
-    },
-
-    weatherContainerColor () {
-      return {
-        'Weather__container--sun': this.weather.icon.sun,
-        'Weather__container--moon': this.weather.icon.moon,
-        'Weather__container--cloud': this.weather.icon.cloud,
-        'Weather__container--rain': this.weather.icon.rain,
-        'Weather__container--storm': this.weather.icon.storm,
-        'Weather__container--sunrain': this.weather.icon.sunrain,
-        'Weather__container--snow': this.weather.icon.snow,
-        'Weather__container--wind': this.weather.icon.wind,
-        'Weather__container--moonrain': this.weather.icon.moonrain
-      }
     }
   },
   methods: {
 
+    ...mapActions([
+      'checkGeoSupport',
+      'getClientGeolocation',
+      'sendDataToServer'
+    ]),
+
     changeUnits () {
-      if (this.weather.unitTemp.current === 'ºC') {
-        this.weather.unitTemp.current = 'ºF'
-        this.weather.unitTemp.other = 'ºC'
+      let temperature = this.weather.currently.temperature
+      let unitTemp = this.weather.unitTemp
+      if (unitTemp.current === 'ºC') {
+        unitTemp.current = 'ºF'
+        unitTemp.other = 'ºC'
         this.weather.currently.temperature =
-          (this.weather.currently.temperature * 9 / 5) + 32
-      } else if (this.weather.unitTemp.current === 'ºF') {
-        this.weather.unitTemp.current = 'ºC'
-        this.weather.unitTemp.other = 'ºF'
+          (temperature * 9 / 5) + 32
+      } else if (unitTemp.current === 'ºF') {
+        unitTemp.current = 'ºC'
+        unitTemp.other = 'ºF'
         this.weather.currently.temperature =
-          (this.weather.currently.temperature - 32) * 5 / 9
+          (temperature - 32) * 5 / 9
       }
     },
 
-    sendDataToServer (data) {
-      return axios
-        .create()
-        .post('/api/weather', {
-          baseURL: 'http://localhost:5000',
-          data: {
-            coords: {
-              lat: data.lat,
-              long: data.long
-            },
-            units: 'si',
-            exclude: 'minutely,hourly,daily,alerts,flags'
-          }
-        })
-    },
-
-    weatherSuccessHandler (res) {
-      this.weather = Object.assign({}, this.weather, res.data)
-      this.weather.success.status = !this.weather.success.status
-      this.showWeatherIcon(res.data.currently.icon)
-      this.weather.show = true
-    },
-
-    errorHandler (error) {
-      console.log('Error on fetchLocalWeather', error)
-      this.weather.error.status = !this.weather.error.status
-    },
-
     fetchLocalWeather () {
-      this.getUserPosition()
-        .then((data) => {
-          console.log(data)
-          return this.sendDataToServer(data)
-        })
-        .then((res) => {
-          this.weatherSuccessHandler(res)
-        })
-        .catch((error) => {
-          this.errorHandler(error)
-        })
+      this.checkGeoSupport()
+        .then(() => this.getClientGeolocation())
+        .then((pos) => this.sendDataToServer({ pos, service: 'local' }))
+        .then((res) => { this.weatherSuccessHandler(res) })
+        .catch((error) => { this.errorHandler(error) })
     },
 
-    getUserPosition () {
-      return new Promise((resolve, reject) => {
-        if (!navigator.geolocation) {
-          this.error.status = !this.error.status
-          reject(this.error.msg)
-        } else {
-          this.success.status = !this.success.status
-          navigator.geolocation.getCurrentPosition((pos) => {
-            this.$set(this.pos, 'lat', pos.coords.latitude.toFixed(4))
-            this.$set(this.pos, 'long', pos.coords.longitude.toFixed(4))
-            this.pos.status = !this.pos.status
-            resolve({
-              lat: pos.coords.latitude.toFixed(4),
-              long: pos.coords.longitude.toFixed(4)
-            })
-          }, () => {
-            this.pos.error.status = !this.pos.error.status
-            reject(this.pos.error.msg)
-          })
-        }
-      })
+    fetchOthersWeather () {
+      let location = this.otherLocation
+      this.sendDataToServer({ location, service: 'other' })
+        .then((res) => { this.weatherSuccessHandler(res) })
+        .catch((error) => { this.errorHandler(error) })
     },
+
+    // fetchOthersWeather () {
+    //   let apiUrl = 'api/weather/other'
+    //   let config = {
+    //     baseURL: 'http://localhost:5000/',
+    //     data: {
+    //       address: this.otherLocation,
+    //       units: 'si',
+    //       exclude: 'minutely,hourly,daily,alerts,flags'
+    //     }
+    //   }
+    //   this.sendDataToServer(apiUrl, config)
+    //     .then((res) => {
+    //       console.log(res)
+    //       this.weatherSuccessHandler(res)
+    //     })
+    //     .catch((error) => {
+    //       this.errorHandler(error)
+    //     })
+    // },
 
     showWeatherIcon (responseIcon) {
       let iconNames = Object.keys(this.weather.icon)
@@ -263,8 +209,21 @@ export default {
 
     showIconAndHideOthers () {
       let keys = Object.keys(this.weather.icon)
-      keys.forEach((key) => this.weather.icon[key] = false)
+      keys.forEach((key) => { this.weather.icon[key] = false })
       return Promise.resolve()
+    },
+
+    weatherSuccessHandler (res) {
+      console.log('SUCCESS************')
+      this.weather = Object.assign({}, this.weather, res.data)
+      this.weather.status.error = false
+      this.showWeatherIcon(res.data.currently.icon)
+      this.weather.show = true
+    },
+
+    errorHandler (error) {
+      console.log('Error on fetchLocalWeather', error)
+      this.weather.status.error = false
     }
   },
   filters: {
