@@ -3,9 +3,14 @@
        :class="setBackground">
     <div class="Weather__title grid__row">
       <h1>WEATHERZILLA</h1>
-      <h3>An app to check your Wather</h3>
+      <h3>An app to check your Weather</h3>
       <h5 v-if="geolocation.pos.status.error">{{ geolocation.pos.status.msg }}</h5>
       <h5 v-if="weather.status.error">{{ weather.status.msg.error }}</h5>
+      <h5>
+        <a href="https://darksky.net/poweredby/" title="Go to darksky.net" target="_blank">
+          <strong>Powered by Dark Sky</strong>
+        </a>
+      </h5>
     </div>
     <transition name="fade">
       <div class="Weather__icons" v-if="weather.show">
@@ -46,9 +51,11 @@
       <input v-model="otherLocation"
              class="input__text--large"
              type="text"
-             style="margin-bottom: 0.5rem"
+             style="margin-bottom: 0.5rem; text-align: center"
              placeholder="New York"><br>
-      <span><em><small>Try typing the name of a city</small></em></span>
+      <span><em>
+        <strong><small>Try typing the name of a city</small></strong>
+      </em></span>
     </div>
   </div>
 </template>
@@ -241,7 +248,7 @@ export default {
   font-size: 1.6em;
   margin: 0.7rem 0;
 }
-.Weather__title      { font-family: 'montserratmedium', Arial, sans-serif }
+.Weather__title      { font-family: 'Oswald', sans-serif }
 .Weather__data--temp { font-size: 2.2em }
 
 .Weather__controller {
@@ -276,7 +283,7 @@ export default {
     grid-template-columns: auto;
     grid-template-rows: repeat(4, auto);
   }
-  .Weather__title { font-size: 0.6em }
+  .Weather__title { font-size: 0.7em }
   .Weather__icons {
     grid-column: 1 / -1;
     grid-row: 2 / span 1;
@@ -304,7 +311,7 @@ export default {
     grid-template-rows: repeat(3, auto);
   }
   .Weather__title {
-    font-size: 0.6em;
+    font-size: 0.8em;
     grid-column: 1 / -1;
   }
   .Weather__icons {
