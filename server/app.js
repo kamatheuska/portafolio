@@ -1,14 +1,10 @@
 const express = require('express')
 const path = require('path')
-const axios = require('axios')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const app = express()
 
-const darksky_url = process.env.DARKSKY_URL
-const geocode_api_key = process.env.GEOCODE_API_KEY
-const geocode_url = process.env.GEOCODE_URL
-
+const { weatherForecast, geocodeString } = require('./api')
 const dist = path.join(__dirname, '..', 'dist')
 
 app.use(express.static(dist))
@@ -20,15 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/api/weather/local', (req, res) => {
-  let { coords, units, exclude } = req.body.data
-  let apiUrl =`${darksky_url}${coords.lat},${coords.lng}`
-  let config = {
-    params: { units, exclude }
-  }
-
-  axios
-    .create()
-    .get(apiUrl, config)
+  weatherForecast(req.body.data)
     .then((json) => {
       res.status(200).send(json.data)
     })
@@ -38,35 +26,18 @@ app.post('/api/weather/local', (req, res) => {
 })
 
 app.post('/api/weather/other', (req, res) => {
-  let { address, units, exclude  } = req.body.data
-  let configGeocode = {
-    params: {
-      address,
-      key: geocode_api_key
-    }
-  }
-
-  let requestWeather = (coords) => {
-    let darkSkyUrl =`${darksky_url}${coords.lat},${coords.lng}`
-    let configWeather = {
-      params: { units, exclude }
-    }
-    return axios
-      .create()
-      .get(darkSkyUrl, configWeather)
-      .then((json) => {
-        return json
-      })
-      .catch((err) => {
-        console.log('Error on weather request', err)
-      })
-  } 
-
-  axios
-    .create()
-    .get(geocode_url, configGeocode)
+  let data = req.body.data
+  geocodeString(data.address)
     .then((json) => {
-      return requestWeather(json.data.results[0].geometry.location)
+      let obj = {
+        coords: {
+          lat: json.data.results[0].geometry.location.lat,
+          lng: json.data.results[0].geometry.location.lng
+        },
+        units: data.units,
+        exclude: data.exclude
+      }
+      return weatherForecast(obj)
     })
     .then((json) => {
       res.status(200).send(json.data)

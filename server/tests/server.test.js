@@ -30,8 +30,21 @@ describe('GET /api/weather/local', () => {
         expect(res.body.latitude).toBe(+(localOpts.data.coords.lat))
         expect(res.body.longitude).toBe(+(localOpts.data.coords.lng))
       })
+      .end(done)  
+  })
+
+  it('should fail to get the weather forecast', function(done) {
+    request(app)
+      .post('/api/weather/local')
+      .send({
+        data: {
+          coords: {},
+          units: 'si',
+          exclude: 'minutely,hourly,daily,alerts,flags'
+        }
+      })
+      .expect(400)
       .end(done)
-      
   })
 })
 
@@ -45,7 +58,20 @@ describe('GET /api/weather/other', () => {
         expect(res.body).toBeTruthy()
         expect(res.body).toBeInstanceOf(Object)
       })
+      .end(done)      
+  })
+
+  it('should fail to get the geocoded address and weather forecast', function(done) {
+    request(app)
+      .post('/api/weather/local')
+      .send({
+        data: {
+          address: '',
+          units: 'si',
+          exclude: 'minutely,hourly,daily,alerts,flags'
+        }
+      })
+      .expect(500)
       .end(done)
-      
   })
 })
