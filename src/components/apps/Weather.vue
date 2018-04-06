@@ -3,6 +3,7 @@
        :class="setBackground">
     <div class="Weather__title grid__row">
       <h1>WEATHERZILLA</h1>
+      <h3>An app to check your Wather</h3>
       <h5 v-if="geolocation.pos.status.error">{{ geolocation.pos.status.msg }}</h5>
       <h5 v-if="weather.status.error">{{ weather.status.msg.error }}</h5>
     </div>
@@ -40,12 +41,14 @@
       </div>
     </transition>
     <div class="Weather__controller">
-      <button class="button__small" @click="fetchLocalWeather()">My Location</button><br>
-      <button class="button__small" @click="fetchOthersWeather()">Other Places</button>
+      <button class="button__small" @click="fetchLocalWeather()">weather on my location</button><br>
+      <button class="button__small" @click="fetchOthersWeather()">weather on other places</button>
       <input v-model="otherLocation"
              class="input__text--large"
              type="text"
+             style="margin-bottom: 0.5rem"
              placeholder="New York"><br>
+      <span><em><small>Try typing the name of a city</small></em></span>
     </div>
   </div>
 </template>
