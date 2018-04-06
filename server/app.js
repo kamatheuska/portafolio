@@ -58,4 +58,5 @@ app.get('/api/quote', (req, res) => {
   console.log(obj)
   res.json(obj)
 })
+
 module.exports = app

@@ -75,7 +75,7 @@ export default new Vuex.Store({
   },
   actions: {
 
-    sendDataToServer ({ getters, state, commit }, req) {
+    requestApi ({ getters, state, commit }, req) {
       if (req.service === 'local') {
         let config = getters.getFullConfigForLocal(req.pos, req.service)
         let apiUrl = state.weatherApi.url[req.service]
@@ -89,6 +89,14 @@ export default new Vuex.Store({
         return axios
           .create()
           .post(apiUrl, config)
+      } else if (req.service === 'quote') {
+        return axios
+          .create()
+          .get('/api/quote')
+      } else if (req.service === 'tweet') {
+        return axios
+          .create()
+          .get('/api/quote')
       }
     },
 

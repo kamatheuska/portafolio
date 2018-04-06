@@ -145,7 +145,7 @@ export default {
     ...mapActions([
       'checkGeoSupport',
       'getClientGeolocation',
-      'sendDataToServer'
+      'requestApi'
     ]),
 
     changeUnits () {
@@ -167,14 +167,14 @@ export default {
     fetchLocalWeather () {
       this.checkGeoSupport()
         .then(() => this.getClientGeolocation())
-        .then((pos) => this.sendDataToServer({ pos, service: 'local' }))
+        .then((pos) => this.requestApi({ pos, service: 'local' }))
         .then((res) => { this.weatherSuccessHandler(res) })
         .catch((error) => { this.errorHandler(error) })
     },
 
     fetchOthersWeather () {
       let location = this.otherLocation
-      this.sendDataToServer({ location, service: 'other' })
+      this.requestApi({ location, service: 'other' })
         .then((res) => { this.weatherSuccessHandler(res) })
         .catch((error) => { this.errorHandler(error) })
     },

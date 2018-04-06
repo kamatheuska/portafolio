@@ -77,7 +77,7 @@ describe('POST /api/weather/other', () => {
 })
 
 describe('GET /api/quote', () => {
-  it.only('should return a random quote', function(done) {
+  it('should return a random quote', function(done) {
     request(app)
       .get('/api/quote')
       .expect((res) => {
@@ -87,3 +87,4 @@ describe('GET /api/quote', () => {
       .end(done)
   })
 })
+
