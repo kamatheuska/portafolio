@@ -66,8 +66,8 @@ input {
   padding-left: 0.5rem;
 }
 h1, h2, h3, h4, h5, h6 {
-  -webkit-margin-before: 0.6em;
-  -webkit-margin-after: 0.6em;
+  -webkit-margin-before: 0.1em;
+  -webkit-margin-after: 0.1em;
 }
 button { 
   position: relative;
@@ -223,13 +223,6 @@ SYNTAX REMAINDER FOR GRID:
   margin-top: 1rem;
   border-radius: 4px;
   transition: all 1s ease;
-}
-.button__small:hover {
-  background-color: #3B9ED7;
-  border: 2px solid #FFF;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  color:  #FFF;
 }
 .button__tiny {
   cursor: pointer;
