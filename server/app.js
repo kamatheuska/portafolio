@@ -3,6 +3,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const app = express()
+const movieQuotes = require('movie-quotes')
 
 const { weatherForecast, geocodeString } = require('./api')
 const dist = path.join(__dirname, '..', 'dist')
@@ -45,5 +46,16 @@ app.post('/api/weather/other', (req, res) => {
     .catch((err) => {
       res.status(400).send(err)
     })
+})
+
+app.get('/api/quote', (req, res) => {
+  let fullQuote = movieQuotes.random()
+  let endOfQuote = fullQuote.indexOf('"', 1) + 1
+  let obj = {
+    quote: fullQuote.slice(0, endOfQuote),
+    author: fullQuote.slice(endOfQuote + 1)
+  }
+  console.log(obj)
+  res.json(obj)
 })
 module.exports = app

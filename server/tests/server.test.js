@@ -18,7 +18,7 @@ const otherOpts = {
     exclude: 'minutely,hourly,daily,alerts,flags'
   }
 } 
-describe('GET /api/weather/local', () => {
+describe('POST /api/weather/local', () => {
   it('should return a JSON response', function(done) {
     request(app)
       .post('/api/weather/local')
@@ -48,7 +48,7 @@ describe('GET /api/weather/local', () => {
   })
 })
 
-describe('GET /api/weather/other', () => {
+describe('POST /api/weather/other', () => {
   it('should return a JSON response from GoogleApis', function(done) {
     request(app)
       .post('/api/weather/other')
@@ -72,6 +72,18 @@ describe('GET /api/weather/other', () => {
         }
       })
       .expect(500)
+      .end(done)
+  })
+})
+
+describe('GET /api/quote', () => {
+  it.only('should return a random quote', function(done) {
+    request(app)
+      .get('/api/quote')
+      .expect((res) => {
+        console.log(res.body)
+        expect(res.body).toBeTruthy()
+      })
       .end(done)
   })
 })

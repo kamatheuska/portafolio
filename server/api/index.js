@@ -4,6 +4,7 @@ const darkskyUrl = process.env.DARKSKY_URL
 const geocodeApiKey = process.env.GEOCODE_API_KEY
 const geocodeUrl = process.env.GEOCODE_URL
 
+
 /* 
  * A call to the DarkSky API that takes a 
  * deconstructed data object as an argument.
