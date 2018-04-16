@@ -11,12 +11,15 @@
         <div class="Wiki__options" v-if="options">
           <random-dice></random-dice>
           <div class="Wiki__input">
+            <form @submit.prevent="getWikiDocs()">
+
             <input type="text"
                 v-model="query"
             placeholder="Search in Wikipedia"
                   class="input__text--full">
-            <button class="button--primary"
-            @click="getWikiDocs()">Go get them all!</button>
+            <button class="button--primary" type="submit"
+            @click="getWikiDocs()">Search on Wikipedia</button>
+            </form>
           </div>
         </div>
       </transition>
@@ -28,7 +31,14 @@
          @mouseout="showByIndex = null"
          :class="`Wiki__results${i}`">
       <h2 v-if="showByIndex !== i">{{ page.title | textToUpperCase }}</h2>
-        <span v-show="showByIndex === i" v-html="page.snippet"></span>
+      <div  v-show="showByIndex === i">
+        <span v-html="page.snippet"></span>
+        <a :href="`http://en.wikipedia.org/?curid=${page.pageid}`"
+            title="Go To Wikipedia"
+            target="_blank">
+            <h4 style="font-family: monospace">link to article</h4>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -65,7 +75,6 @@ export default {
         params: {
           origin: '*',
           action: 'query',
-          prop: 'revisions',
           format: 'json',
           list: 'search',
           srsearch: this.query
@@ -73,6 +82,7 @@ export default {
       }
       this.requestApi({ config, service: 'wiki' })
         .then((res) => {
+          console.log(res)
           this.wiki = Object.assign({}, this.wiki, res.data)
         })
     }
@@ -151,7 +161,9 @@ export default {
   and (orientation: portrait){
     .Wiki {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(6, auto)
+      grid-template-rows: repeat(6, auto);
+      height: 100vh;
+      width: 100vw;
     }
     .Wiki__search-icon {
       grid-column: 1 / span 2;
@@ -172,7 +184,9 @@ export default {
   and (orientation: landscape){
     .Wiki {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(6, 1fr)
+      grid-template-rows: repeat(6, 1fr);
+      height: 100vh;
+      width: 100vw;
     }
     .Wiki__search-icon {
       grid-column: 2 / span 1;
