@@ -37,6 +37,9 @@ export default new Vuex.Store({
         local: 'api/weather/local',
         other: 'api/weather/other'
       }
+    },
+    wikipediaApi: {
+      url: 'https://en.wikipedia.org/w/api.php'
     }
   },
   getters: {
@@ -97,6 +100,11 @@ export default new Vuex.Store({
         return axios
           .create()
           .get('/api/quote')
+      } else if (req.service === 'wiki') {
+        let config = req.config
+        return axios
+          .create()
+          .get(state.wikipediaApi.url, config)
       }
     },
 

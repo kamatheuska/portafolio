@@ -7,6 +7,9 @@
     <div class="Welcome__app2 box">
       <router-link to="rqmachine">Random Quote Machine</router-link>
     </div>
+    <div class="Welcome__app3 box">
+      <router-link to="wikiviewer">Wikipedia Viewer</router-link>
+    </div>
 
   </div>
 </template>
