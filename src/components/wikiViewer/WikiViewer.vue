@@ -1,5 +1,8 @@
 <template>
   <div class="Wiki container grid">
+    <div class="button__home">
+      <router-link to="/"><h1><em>⤶</em></h1></router-link>
+    </div>
     <div @click="options = !options"
           class="Wiki__search-icon"
            v-if="!options">

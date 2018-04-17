@@ -1,5 +1,8 @@
 <template>
   <div class="RQMachine grid" :class="newBackground">
+    <div class="button__home">
+      <router-link to="/"><h1><em>⤶</em></h1></router-link>
+    </div>
     <transition name="fade">
       <div class="RQMachine__container box grid">
         <h1 class="grid__row">Random Movie Quotes</h1>

@@ -1,6 +1,9 @@
 <template>
   <div class="Weather container grid"
        :class="setBackground">
+    <div class="button__home">
+      <router-link to="/"><h5><em>back to dash</em></h5></router-link>
+    </div>
     <div class="Weather__title grid__row">
       <h1>WEATHERZILLA</h1>
       <h3>An app to check your Weather</h3>
