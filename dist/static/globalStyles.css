@@ -237,6 +237,11 @@ SYNTAX REMAINDER FOR GRID:
   border-radius: 50%;
   transition: all 1s ease;
 }
+.button__home {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
 /*=========================*\
   #CONTAINERS AND FRAMES
   #BOX
