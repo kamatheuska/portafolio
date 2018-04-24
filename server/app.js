@@ -4,8 +4,8 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const app = express()
 const movieQuotes = require('movie-quotes')
-
-const { weatherForecast, geocodeString } = require('./api')
+const { weatherForecast, geocodeString,
+        getTwitchStreams, getTwitchRecommendedStreams, getTwitchUsers } = require('./api')
 const dist = path.join(__dirname, '..', 'dist')
 
 app.use(express.static(dist))
@@ -30,6 +30,7 @@ app.post('/api/weather/other', (req, res) => {
   let data = req.body.data
   geocodeString(data.address)
     .then((json) => {
+
       let obj = {
         coords: {
           lat: json.data.results[0].geometry.location.lat,
@@ -44,6 +45,7 @@ app.post('/api/weather/other', (req, res) => {
       res.status(200).send(json.data)
     })
     .catch((err) => {
+      console.log(err)
       res.status(400).send(err)
     })
 })
@@ -55,8 +57,42 @@ app.get('/api/quote', (req, res) => {
     quote: fullQuote.slice(0, endOfQuote),
     author: fullQuote.slice(endOfQuote + 1)
   }
-  console.log(obj)
   res.json(obj)
 })
 
+app.get('/api/twitch/users', (req, res) => {
+  getTwitchUsers()
+    .then((json) => {
+      console.log(json.data)
+      res.status(200).send(json.data)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(400).send(err)
+    })
+})
+
+app.get('/api/twitch/streams', (req, res) => {
+  getTwitchStreams()
+    .then((json) => {
+      console.log(json.data)
+      res.status(200).send(json.data)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(400).send(err)
+    })
+})
+
+app.get('/api/twitch/streams/recommended', (req, res) => {
+  getTwitchRecommendedStreams()
+    .then((json) => {
+      console.log(json.data)
+      res.status(200).send(json.data)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(400).send(err)
+    })
+})
 module.exports = app

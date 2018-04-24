@@ -17,7 +17,8 @@ const otherOpts = {
     units: 'si',
     exclude: 'minutely,hourly,daily,alerts,flags'
   }
-} 
+}
+
 describe('POST /api/weather/local', () => {
   it('should return a JSON response', function(done) {
     request(app)
@@ -81,10 +82,39 @@ describe('GET /api/quote', () => {
     request(app)
       .get('/api/quote')
       .expect((res) => {
-        console.log(res.body)
         expect(res.body).toBeTruthy()
       })
       .end(done)
   })
 })
 
+describe('GET /api/twitch', () => {
+  it('should return data from a list of users on twitch', function(done) {
+    request(app)
+      .get('/api/twitch/users')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.data).toBeTruthy()
+        expect(res.body.data.length).toBe(5)
+      })
+      .end(done)
+  })
+  it.only('should return a list of streams on twitch', function(done) {
+    request(app)
+      .get('/api/twitch/streams')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.data).toBeTruthy()
+      })
+      .end(done)
+  })
+  it('should return streams online on twitch', function(done) {
+    request(app)
+      .get('/api/twitch/streams/recommended')
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.data).toBeTruthy()
+      })
+      .end(done)
+  })
+})

@@ -212,4 +212,5 @@ export default {
   animation: teaseUser ease 2s infinite;
   font-size: 0.4em;
 }
+
 </style>
