@@ -5,18 +5,9 @@
         <router-link to="/">HOME</router-link>
         <h1>TWITCH STREAMERS</h1>
         <div class="Browser__controls">
-          <button class="button--state-alert"
-                  @click="toggleStreams('all')">
-            ALL
-          </button>
-          <button class="button--primary"
-                  @click="toggleStreams('online')">
-            ONLINE
-          </button>
-          <button class="button--danger"
-                  @click="toggleStreams('offline')">
-            OFFLINE
-          </button>
+          <button class="button--state-alert">ALL</button>
+          <button class="button--primary">ONLINE</button>
+          <button class="button--danger">OFFLINE</button>
         </div>
       </header>
       <div v-for="(user, i) in twitch.users.streams"

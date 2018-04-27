@@ -130,7 +130,7 @@ export default {
   display: flex;
   align-items: center;
 }
-.button--primary {
+.Wiki .button--primary {
   margin-top: 1rem;
   height: 2.5rem;
   color: #6D6D6D;
