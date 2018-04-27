@@ -13,6 +13,9 @@
     <div class="Welcome__app3 box">
       <router-link to="wikiviewer"><h3>Wikipedia Viewer</h3></router-link>
     </div>
+    <div class="Welcome__app4 box">
+      <router-link to="twitchtv"><h3>TwitchTV Streams</h3></router-link>
+    </div>
 
   </div>
 </template>

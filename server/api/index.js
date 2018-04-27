@@ -62,7 +62,7 @@ const getTwitchUsers = () => {
   let url = 'https://api.twitch.tv/helix/users'
   let config = {
     params: {
-      'login': ['freecodecamp', 'ESL_SC2', 'OgamingSC2', 'cretetion', 'noobs2ninjas']
+      'login': ['ESL_SC2', 'OgamingSC2', 'cretetion', 'freecodecamp', 'storbeck', 'habathcx', 'RobotCaleb', 'noobs2ninjas']
     }, 
     headers: {
       'Client-ID': twitchId
@@ -91,7 +91,7 @@ const getTwitchRecommendedStreams = () => {
   let url = 'https://api.twitch.tv/helix/streams'
   let config = {
     params: {
-      'user_login': ['freecodecamp', 'ESL_SC2', 'OgamingSC2', 'cretetion', 'noobs2ninjas']
+      'user_login': ['ESL_SC2', 'OgamingSC2', 'cretetion', 'freecodecamp', 'storbeck', 'habathcx', 'RobotCaleb', 'noobs2ninjas']
     }, 
     headers: {
       'Client-ID': twitchId

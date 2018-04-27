@@ -79,32 +79,45 @@ export default new Vuex.Store({
   actions: {
 
     requestApi ({ getters, state, commit }, req) {
-      if (req.service === 'local') {
-        let config = getters.getFullConfigForLocal(req.pos, req.service)
-        let apiUrl = state.weatherApi.url[req.service]
-        return axios
-          .create()
-          .post(apiUrl, config)
-      } else if (req.service === 'other') {
-        let config = getters.getFullConfigForOther(req.location, req.service)
-        let apiUrl = state.weatherApi.url[req.service]
-        console.log('STORE', config, apiUrl)
-        return axios
-          .create()
-          .post(apiUrl, config)
-      } else if (req.service === 'quote') {
-        return axios
-          .create()
-          .get('/api/quote')
-      } else if (req.service === 'tweet') {
-        return axios
-          .create()
-          .get('/api/quote')
-      } else if (req.service === 'wiki') {
-        let config = req.config
-        return axios
-          .create()
-          .get(state.wikipediaApi.url, config)
+      let config = req.config || {}
+
+      switch (req.service) {
+        case 'local':
+          config = getters.getFullConfigForLocal(req.pos, req.service)
+          return axios
+            .create()
+            .post(state.weatherApi.url[req.service], config)
+
+        case 'other':
+          config = getters.getFullConfigForOther(req.location, req.service)
+          return axios
+            .create()
+            .post(state.weatherApi.url[req.service], config)
+
+        case 'quote':
+          return axios
+            .create()
+            .get('/api/quote')
+
+        case 'tweet':
+          return axios
+            .create()
+            .get('/api/quote')
+
+        case 'wiki':
+          return axios
+            .create()
+            .get(state.wikipediaApi.url, config)
+
+        case 'twitch/users':
+          return axios
+            .create()
+            .get('/api/twitch/users')
+
+        case 'twitch/recommended':
+          return axios
+            .create()
+            .get('/api/twitch/streams/recommended')
       }
     },
 

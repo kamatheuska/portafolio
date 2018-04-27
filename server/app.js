@@ -63,7 +63,6 @@ app.get('/api/quote', (req, res) => {
 app.get('/api/twitch/users', (req, res) => {
   getTwitchUsers()
     .then((json) => {
-      console.log(json.data)
       res.status(200).send(json.data)
     })
     .catch((err) => {
@@ -75,7 +74,6 @@ app.get('/api/twitch/users', (req, res) => {
 app.get('/api/twitch/streams', (req, res) => {
   getTwitchStreams()
     .then((json) => {
-      console.log(json.data)
       res.status(200).send(json.data)
     })
     .catch((err) => {
@@ -87,7 +85,6 @@ app.get('/api/twitch/streams', (req, res) => {
 app.get('/api/twitch/streams/recommended', (req, res) => {
   getTwitchRecommendedStreams()
     .then((json) => {
-      console.log(json.data)
       res.status(200).send(json.data)
     })
     .catch((err) => {

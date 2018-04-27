@@ -5,6 +5,7 @@ import Welcome from '@/components/Welcome'
 import Weather from '@/components/weather/Weather'
 import RQMachine from '@/components/rqmachine/RQMachine'
 import WikiViewer from '@/components/wikiViewer/WikiViewer'
+import TwitchBrowser from '@/components/twitchStreams/TwitchBrowser'
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
     {
       path: '/wikiviewer',
       component: WikiViewer
+    },
+    {
+      path: '/twitchtv',
+      component: TwitchBrowser
     }
   ]
 })
