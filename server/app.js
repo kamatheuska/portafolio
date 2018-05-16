@@ -11,6 +11,19 @@ const dist = path.join(__dirname, '..', 'dist')
 app.use(express.static(dist))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
+console.log(process.env.NODE_ENV)
+
+if (process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    console.log(req.header('x-forwarded-proto'))
+    if (req.header('x-forwarded-proto') !== 'https') {
+      res.redirect(`https://${req.header('host')}${req.url}`)
+    }
+    else {
+      next()
+    }
+  })
+}
 
 app.get('/', (req, res) => {
   res.sendFile(dist + 'index.html')
