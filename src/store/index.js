@@ -40,6 +40,22 @@ export default new Vuex.Store({
     },
     wikipediaApi: {
       url: 'https://en.wikipedia.org/w/api.php'
+    },
+    homepage: {
+      svgConnectors: [
+        { id: 'connectors-up', hidden: false },
+        { id: 'connectors-down', hidden: false },
+        { id: 'connectors-bio', hidden: false },
+        { id: 'connectors-projects', hidden: false },
+        { id: 'connectors-music', hidden: false },
+        { id: 'connectors-contacts', hidden: false }
+      ],
+      navigation: [
+        { id: 'nav-bio', name: 'bio', hidden: false, active: false },
+        { id: 'nav-projects', name: 'projects', hidden: false, active: false },
+        { id: 'nav-music', name: 'music', hidden: false, active: false },
+        { id: 'nav-contact', name: 'contact', hidden: false, active: false }
+      ]
     }
   },
   getters: {
@@ -68,6 +84,33 @@ export default new Vuex.Store({
     NO_GEOLOCATION_SUPPORT: state => { state.geolocation.clientError = true },
     HANDLE_GEOLOCATION_SUCCESS: state => { state.geolocation.pos.status.error = false },
     HANDLE_GEOLOCATION_ERROR: state => { state.geolocation.pos.status.error = true },
+    HANDLE_NAVIGATION_STATUS: ({ homepage }, menu) => {
+      let isNavActive = homepage.navigation.reduce((bool, el, i) => {
+        // eslint-disable-next-line
+        el.active ? bool = true : null
+        return bool
+      }, false)
+      if (!isNavActive) {
+        //
+        homepage.navigation.forEach(el => {
+          if (el.name !== menu.name) {
+            el.hidden = true
+          }
+        })
+        homepage.svgConnectors[0].hidden = true
+        homepage.svgConnectors[1].hidden = true
+        menu.active = true
+      } else {
+        homepage.navigation.forEach(el => {
+          if (el.name !== menu.name) {
+            el.hidden = false
+          }
+        })
+        homepage.svgConnectors[0].hidden = false
+        homepage.svgConnectors[1].hidden = false
+        menu.active = false
+      }
+    },
     SET_USER_POSITION: (state, coords) => {
       state.geolocation.pos = {
         ...state.geolocation.pos,
@@ -77,6 +120,12 @@ export default new Vuex.Store({
     }
   },
   actions: {
+
+    showSubmenu ({ commit, state }, name) {
+      let menu = state.homepage.navigation
+        .filter(el => el.name === name)[0]
+      commit('HANDLE_NAVIGATION_STATUS', menu)
+    },
 
     requestApi ({ getters, state, commit }, req) {
       let config = req.config || {}

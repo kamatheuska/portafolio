@@ -1,49 +1,32 @@
 <template>
   <div class="Welcome grid">
-    <div class="grid__row">
-      <h1>APPS FOR FREECODECAMP</h1>
-      <h5>IN CONSTRUCTION</h5>
-    </div>
-    <div class="Welcome__app1 box">
-      <router-link to="weather"><h3>Weatherzilla</h3></router-link>
-    </div>
-    <div class="Welcome__app2 box">
-      <router-link to="rqmachine"><h3>Random Quote Machine</h3></router-link>
-    </div>
-    <div class="Welcome__app3 box">
-      <router-link to="wikiviewer"><h3>Wikipedia Viewer</h3></router-link>
-    </div>
-    <div class="Welcome__app4 box">
-      <router-link to="twitchtv"><h3>TwitchTV Streams</h3></router-link>
-    </div>
-
+    <svg-home></svg-home>
   </div>
-</template>
+
+ </template>
 
 <script>
+import SvgHome from './welcome/SvgHome'
+
 export default {
   data () {
     return {
 
     }
+  },
+  components: {
+    'svg-home': SvgHome
   }
 }
 </script>
 
-<style>
+<style scoped>
 .Welcome {
   text-align: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 4.5rem repeat(2, 1fr);
+  grid-template-columns: 3rem auto 3rem;
+  grid-template-rows:  3rem auto 3rem;
   align-items: center;
   justify-items: center;
-}
-.Welcome .box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80%;
-  width: 80%;
 }
 @media only screen
   and (max-device-width: 520px)
