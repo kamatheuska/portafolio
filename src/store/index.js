@@ -91,7 +91,6 @@ export default new Vuex.Store({
         return bool
       }, false)
       if (!isNavActive) {
-        //
         homepage.navigation.forEach(el => {
           if (el.name !== menu.name) {
             el.hidden = true

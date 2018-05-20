@@ -108,16 +108,33 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'svg-letters',
   data () {
     return {
 
     }
+  },
+  computed: {
+    ...mapState([ 'homepage' ]),
+
+    blurClass () {
+      let isNavActive = this.homepage.navigation.reduce((bool, el, i) => {
+        // eslint-disable-next-line
+        el.active ? bool = true : null
+        return bool
+      }, false)
+
+      return {
+        'Letters--blurred': isNavActive
+      }
+    }
   }
 }
 </script>
 
 <style>
-
+.Letters--blurred { filter: blur(5px) }
 </style>

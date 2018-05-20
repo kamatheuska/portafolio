@@ -6,6 +6,7 @@ import Weather from '@/components/weather/Weather'
 import RQMachine from '@/components/rqmachine/RQMachine'
 import WikiViewer from '@/components/wikiViewer/WikiViewer'
 import TwitchBrowser from '@/components/twitchStreams/TwitchBrowser'
+import Matiz from '@/components/Matiz'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
     {
       path: '/twitchtv',
       component: TwitchBrowser
+    },
+    {
+      path: '/matiz',
+      component: Matiz
     }
   ]
 })
