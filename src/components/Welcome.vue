@@ -64,6 +64,7 @@ export default {
   and (max-device-width: 520px)
   and (orientation: portrait) {
     .Welcome {
+      display: block
     }
   }
 
@@ -72,6 +73,7 @@ export default {
   and (max-device-width: 820px)
   and (orientation: landscape) {
     .Welcome {
+      display: block
     }
   }
 </style>

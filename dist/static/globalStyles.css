@@ -325,6 +325,7 @@ select:valid + span:after {
   #VUE TRANSITIONS
 \*=========================*/
 
+/*............FADE............*/
 .fade-enter-active{
   transition: opacity 0.8s;
 }
@@ -332,6 +333,17 @@ select:valid + span:after {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+
+/*............LONG-FADE............*/
+.fade--long-enter-active{
+  transition: opacity 3s;
+}
+.fade--long-leave-active {  transition: opacity 1s }
+.fade--long-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/*............SLIDE-FADE............*/
 .slide-fade-enter-active {
   transition: all 0.8s ease;
   transition-delay: 0.4s;
