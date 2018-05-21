@@ -2,8 +2,8 @@
   <g id="Connectors" transform="translate(509.8 -57.25)">
     <transition name="fade">
       <g id="Connectors__welcome" v-if="!homepage.svgConnectors[0].hidden" transform="translate(-478.3 36.82)">
-        <path id="connectors-up" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.75;fill:none" d="m-291.6 1346v-102.1h53.45v-235h125.1v-354.1l1519 0.2197v105.9l-386.1-2.524-779.6-2.305v141h124.6v283.5" transform="translate(478.3 -36.82)"/>
-        <path id="connectors-down" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.75;fill:none" d="m1057 1431v59.99h454.6v295.7h-576.5v169h-657.1v-60h-171.5v-325.3h-352.1v-221.2" transform="translate(478.3 -36.82)"/>
+        <path id="Connectors__up" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.75;fill:none" d="m-291.6 1346v-102.1h53.45v-235h125.1v-354.1l1519 0.2197v105.9l-386.1-2.524-779.6-2.305v141h124.6v283.5" transform="translate(478.3 -36.82)"/>
+        <path id="Connectors__down" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.75;fill:none" d="m1057 1431v59.99h454.6v295.7h-576.5v169h-657.1v-60h-171.5v-325.3h-352.1v-221.2" transform="translate(478.3 -36.82)"/>
       </g>
     </transition>
     <transition name="fade">
@@ -41,7 +41,7 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'svg-connectors',
+  name: 'svg-Connectors',
   data () {
     return {
 

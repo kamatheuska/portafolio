@@ -43,12 +43,12 @@ export default new Vuex.Store({
     },
     homepage: {
       svgConnectors: [
-        { id: 'connectors-up', hidden: false },
-        { id: 'connectors-down', hidden: false },
-        { id: 'connectors-bio', hidden: false },
-        { id: 'connectors-projects', hidden: false },
-        { id: 'connectors-music', hidden: false },
-        { id: 'connectors-contacts', hidden: false }
+        { id: 'Connectors__up', hidden: false },
+        { id: 'Connectors__down', hidden: false },
+        { id: 'Connectors__bio', hidden: true },
+        { id: 'Connectors__projects', hidden: true },
+        { id: 'Connectors__music', hidden: true },
+        { id: 'Connectors__contacts', hidden: true }
       ],
       navigation: [
         { id: 'nav-bio', name: 'bio', hidden: false, active: false },
@@ -110,6 +110,19 @@ export default new Vuex.Store({
         menu.active = false
       }
     },
+    SET_NAVIGATION_TO_HOME: ({ homepage }) => {
+      homepage.navigation.map(el => {
+        el.active = false
+        el.hidden = false
+        return el
+      })
+      homepage.svgConnectors.map(el => {
+        if (el.id !== 'Connectors__down' || el.id !== 'Connectors__up') {
+          el.hidden = true
+        }
+        el.hidden = false
+      })
+    },
     SET_USER_POSITION: (state, coords) => {
       state.geolocation.pos = {
         ...state.geolocation.pos,
@@ -124,6 +137,9 @@ export default new Vuex.Store({
       let menu = state.homepage.navigation
         .filter(el => el.name === name)[0]
       commit('HANDLE_NAVIGATION_STATUS', menu)
+    },
+    hideSubmenu ({ commit, state }) {
+      commit('SET_NAVIGATION_TO_HOME')
     },
 
     requestApi ({ getters, state, commit }, req) {

@@ -1,5 +1,5 @@
 <template>
-    <g id="Logo" transform="translate(509.8 -57.25)">
+    <g id="Logo" transform="translate(509.8 -57.25)" @click="hideSubmenu()">
       <g id="Logo__n" transform="translate(78.75 -456.4)">
         <path style="opacity:.8710;fill-rule:evenodd;stroke:#4de6a3;stroke-linecap:round;stroke-width:53.42;fill:#fff" d="m385.3 1476h616.7v616.4h-616.7z"/>
         <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m782.3 1759v144h-38.4v-144q0-31.34-11-46.08t-34.45-14.74q-26.77 0-41.3 19.09-14.32 18.89-14.32 54.38v131.4h-38.19v-232.5h38.19v34.87q10.17-19.92 27.6-30.09 17.43-10.38 41.3-10.38 35.49 0 52.92 23.45 17.64 23.25 17.64 70.57z"/>
@@ -21,12 +21,20 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
   name: 'svg-logo',
   data () {
     return {
 
     }
+  },
+  computed: {
+    ...mapState([ 'homepage' ])
+  },
+  methods: {
+    ...mapActions([ 'hideSubmenu' ])
   }
 }
 </script>
