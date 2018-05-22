@@ -1,112 +1,110 @@
 <template>
-  <div>
-    <g id="Letters" transform="translate(509.8 -57.25)">
-      <g id="Letters__right">
-        <g id="Letters__right--o" transform="matrix(15.04 0 0 15.04 1.144e4 -1.212e4)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-701.8 892.6q-1.196 0-1.812 0.9314-0.6152 0.9314-0.6152 2.76 0 1.82 0.6152 2.76 0.6152 0.9314 1.812 0.9314 1.205 0 1.82-0.9314 0.6152-0.9399 0.6152-2.76 0-1.829-0.6152-2.76-0.6152-0.9314-1.82-0.9314zm0-1.333q1.991 0 3.042 1.29 1.06 1.29 1.06 3.734 0 2.452-1.051 3.743-1.051 1.282-3.051 1.282-1.991 0-3.042-1.282-1.051-1.29-1.051-3.743 0-2.444 1.051-3.734t3.042-1.29z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887.7" x="-710.4"/>
-        </g>
-        <g id="Letters__right--p" transform="translate(15.73 -106.4)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m949.7 1484v45.54h-14.86v-124.2h14.86v11.48q3.694-6.666 9.798-10.12 6.184-3.534 14.22-3.534 16.3 0 25.54 12.61 9.316 12.61 9.316 34.94 0 21.93-9.316 34.45-9.316 12.45-25.54 12.45-8.192 0-14.38-3.453-6.104-3.534-9.637-10.2zm43.37-33.57q0-17.19-5.461-25.94-5.381-8.754-16.06-8.754-10.76 0-16.3 8.834-5.542 8.754-5.542 25.86 0 17.03 5.542 25.86 5.542 8.834 16.3 8.834 10.68 0 16.06-8.754 5.461-8.754 5.461-25.94z"/>
-          <path style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:14.05;fill:none" d="m890.6 1385h162.2v162.2h-162.2z"/>
-        </g>
-        <g id="Letters__right--q" transform="matrix(5.744 0 0 5.744 4355 -3793)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-574.8 895.3q0 1.829 0.5725 2.76 0.581 0.9314 1.718 0.9314 1.136 0 1.718-0.9314 0.5896-0.9399 0.5896-2.76t-0.5896-2.751q-0.5811-0.9399-1.718-0.9399-1.136 0-1.718 0.9314-0.5725 0.9314-0.5725 2.76zm4.597 3.555q-0.3845 0.7092-1.042 1.094-0.6494 0.376-1.512 0.376-1.718 0-2.717-1.324-0.9912-1.333-0.9912-3.666 0-2.375 0.9912-3.717t2.717-1.342q0.8545 0 1.504 0.376 0.658 0.3674 1.051 1.077v-1.222h1.581v13.21h-1.581z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="888.4" x="-581.2"/>
-        </g>
-        <g id="Letters__right--r" transform="matrix(3.655 0 0 3.655 3011 -1914)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-510.9 893q-0.5042-0.3931-1.025-0.5725-0.5212-0.1794-1.145-0.1794-1.47 0-2.247 0.9228-0.7776 0.9228-0.7776 2.666v4.76h-1.581v-9.57h1.581v1.871q0.3931-1.017 1.205-1.555 0.8203-0.5469 1.94-0.5469 0.5811 0 1.085 0.1453 0.5042 0.1453 0.9656 0.4529z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887" x="-522.9"/>
-        </g>
-        <g id="Letters__right--s" transform="matrix(2.297 0 0 2.297 2220 -699.8)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-445.7 891.9v1.538q-0.675-0.3931-1.359-0.5896-0.6836-0.1965-1.393-0.1965-1.068 0-1.598 0.3503-0.5212 0.3418-0.5212 1.051 0 0.6409 0.3931 0.957 0.3931 0.3162 1.957 0.6152l0.6323 0.1196q1.171 0.2222 1.769 0.8887 0.6067 0.6665 0.6067 1.735 0 1.418-1.008 2.222-1.008 0.7947-2.803 0.7947-0.7092 0-1.487-0.1538-0.7776-0.1453-1.683-0.4443v-1.624q0.8801 0.4529 1.683 0.6836 0.8032 0.2222 1.521 0.2222 1.042 0 1.615-0.4187 0.5725-0.4272 0.5725-1.188 0-1.094-2.094-1.512l-0.0684-0.0171-0.5896-0.1196q-1.359-0.2649-1.982-0.8887-0.6238-0.6323-0.6238-1.718 0-1.376 0.9314-2.119 0.9314-0.752 2.657-0.752 0.769 0 1.478 0.1453 0.7092 0.1367 1.393 0.4187z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887.7" x="-457.3"/>
-        </g>
-        <g id="Letters__right--t" transform="matrix(1.462 0 0 1.462 1804 55.89)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-384.1 885.5v2.717h3.572v1.222h-3.572v5.195q0 1.06 0.4016 1.478 0.4016 0.4187 1.401 0.4187h1.769v1.256h-1.923q-1.769 0-2.495-0.7092-0.7263-0.7092-0.7263-2.444v-5.195h-2.555v-1.222h2.555v-2.717z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="883" x="-393"/>
-        </g>
-        <g id="Letters__right--u" transform="matrix(.9399 0 0 .9399 1595 517.7)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-326.4 896.7v-5.93h1.572v5.93q0 1.29 0.4529 1.897 0.4614 0.6067 1.418 0.6067 1.111 0 1.7-0.7776 0.5896-0.7861 0.5896-2.247v-5.409h1.581v9.553h-1.581v-1.436q-0.4187 0.8288-1.145 1.256-0.7178 0.4272-1.683 0.4272-1.47 0-2.188-0.957-0.7178-0.9656-0.7178-2.914z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887" x="-331.4"/>
-        </g>
-        <g id="Letters__right--v" transform="matrix(.6266 0 0 .6266 1502 799.1)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-262.2 889.5h1.632l2.777 8.032 2.786-8.032h1.632l-3.401 9.57h-2.025z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="885.7" x="-266.4"/>
-        </g>
-        <g id="Letters__right--w" transform="matrix(.4177 0 0 .4177 1469 985.1)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-200.1 891.6h1.555l1.666 7.733 1.367-4.939h1.342l1.384 4.939 1.666-7.733h1.555l-2.239 9.57h-1.504l-1.53-5.247-1.521 5.247h-1.504z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887.7" x="-203.5"/>
-        </g>
-        <g id="Letters__right--x" transform="matrix(.3133 0 0 .3133 1474 1079)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-125.6 890.2-3.427 4.58 3.76 4.99h-1.82l-2.803-3.837-2.794 3.837h-1.82l3.76-4.99-3.427-4.58h1.743l2.538 3.461 2.521-3.461z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="886.4" x="-138.5"/>
-        </g>
-        <g id="Letters__right--y" transform="matrix(.2089 0 0 .2089 1494 1172)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-66.88 895.8q-0.3931 0.9998-0.9998 2.632-0.8459 2.256-1.136 2.751-0.3931 0.6665-0.9827 0.9998-0.5896 0.3332-1.376 0.3332h-1.265v-1.316h0.9314q0.6921 0 1.085-0.4016 0.3931-0.4016 0.9998-2.076l-3.7-9.417h1.666l2.837 7.485 2.794-7.485h1.666z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887.3" x="-77.47"/>
-        </g>
-        <g id="Letters__right--z" transform="matrix(.2089 0 0 .2089 1532 1172)">
-          <path style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m-8.058 890.9h6.947v1.436l-5.494 6.87h5.494v1.282h-7.152v-1.453l5.494-6.879h-5.289z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887" x="-13.31"/>
-        </g>
-      </g>
-      <g id="Letters__left">
-        <g id="Letters__left--a" transform="matrix(.2089 0 0 .2089 -5.774 1160)">
-          <path d="m-1584 896.6h-0.5212q-1.376 0-2.076 0.4871-0.6921 0.4785-0.6921 1.436 0 0.863 0.5212 1.342 0.5213 0.4785 1.444 0.4785 1.299 0 2.042-0.8972 0.7434-0.9058 0.7519-2.495v-0.3504zm3.05-0.6494v5.46h-1.581v-1.418q-0.5041 0.8545-1.273 1.265-0.7605 0.4016-1.854 0.4016-1.461 0-2.333-0.8203-0.8716-0.8288-0.8716-2.213 0-1.598 1.068-2.427 1.077-0.8289 3.153-0.8289h2.111v-0.2478q-0.01-1.145-0.581-1.658-0.5725-0.5212-1.829-0.5212-0.8033 0-1.624 0.2307-0.8203 0.2307-1.598 0.675v-1.572q0.8716-0.3332 1.666-0.4956 0.8032-0.1709 1.555-0.1709 1.188 0 2.025 0.3503 0.846 0.3503 1.367 1.051 0.3247 0.4272 0.4614 1.06 0.1367 0.6238 0.1367 1.88z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="888" x="-1594"/>
-        </g>
-        <g id="Letters__left--b" transform="matrix(.2089 0 0 .2089 26.57 1160)">
-          <path d="m-1521 896.1q0-1.829-0.5811-2.76-0.581-0.9314-1.718-0.9314-1.145 0-1.735 0.9399-0.5896 0.9314-0.5896 2.751 0 1.812 0.5896 2.751 0.5896 0.9399 1.735 0.9399 1.136 0 1.718-0.9314 0.5811-0.9314 0.5811-2.76zm-4.623-3.572q0.3759-0.7007 1.034-1.077 0.6665-0.376 1.538-0.376 1.726 0 2.717 1.333 0.9912 1.324 0.9912 3.657 0 2.367-0.9998 3.717-0.9912 1.342-2.726 1.342-0.8545 0-1.512-0.3674-0.6494-0.376-1.042-1.085v1.205h-1.572v-13.3h1.572z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="885.7" x="-1532"/>
-        </g>
-        <g id="Letters__left--c" transform="matrix(.3133 0 0 .3133 211.6 1067)">
-          <path d="m-1455 900.3q-0.6324 0.3674-1.307 0.5469-0.6665 0.188-1.367 0.188-2.222 0-3.478-1.333-1.248-1.333-1.248-3.691t1.248-3.691q1.256-1.333 3.478-1.333 0.6921 0 1.35 0.1794t1.324 0.5554v1.649q-0.6238-0.5554-1.256-0.8032-0.6237-0.2478-1.418-0.2478-1.478 0-2.273 0.957-0.7946 0.957-0.7946 2.734 0 1.769 0.7946 2.734 0.8033 0.957 2.273 0.957 0.8203 0 1.47-0.2478 0.6494-0.2564 1.205-0.7861z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887.4" x="-1467"/>
-        </g>
-        <g id="Letters__left--d" transform="matrix(.4177 0 0 .4177 384.2 973.6)">
-          <path d="m-1394 892.7v-4.948h1.572v13.3h-1.572v-1.205q-0.3931 0.7092-1.051 1.085-0.6494 0.3674-1.504 0.3674-1.735 0-2.734-1.342-0.9912-1.35-0.9912-3.717 0-2.333 0.9997-3.657 0.9998-1.333 2.726-1.333 0.863 0 1.521 0.376 0.6579 0.3674 1.034 1.077zm-4.623 3.572q0 1.829 0.581 2.76 0.5811 0.9314 1.718 0.9314 1.136 0 1.726-0.9399 0.5981-0.9399 0.5981-2.751 0-1.82-0.5981-2.751-0.5896-0.9399-1.726-0.9399t-1.718 0.9314q-0.581 0.9314-0.581 2.76z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="885.9" x="-1405"/>
-        </g>
-        <g id="Letters__left--e" transform="matrix(.6266 0 0 .6266 682.9 787.3)">
-          <path d="m-1328 893.3v0.769h-6.81v0.0513q0 1.564 0.8117 2.418 0.8203 0.8545 2.307 0.8545 0.7519 0 1.572-0.2393 0.8203-0.2393 1.752-0.7263v1.564q-0.8972 0.3674-1.735 0.5469-0.8288 0.188-1.606 0.188-2.23 0-3.486-1.333-1.256-1.342-1.256-3.691 0-2.29 1.23-3.657t3.281-1.367q1.829 0 2.88 1.239 1.06 1.239 1.06 3.384zm-1.572-0.4614q-0.034-1.384-0.658-2.102-0.6152-0.7263-1.777-0.7263-1.136 0-1.871 0.752-0.7349 0.752-0.8716 2.085z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="885" x="-1341"/>
-        </g>
-        <g id="Letters__left--f" transform="matrix(.9399 0 0 .9399 1090 507.9)">
-          <path d="m-1267 886.4v1.307h-1.786q-0.8459 0-1.179 0.3503-0.3247 0.3418-0.3247 1.222v0.846h3.29v1.222h-3.29v8.348h-1.572v-8.348h-2.555v-1.222h2.555v-0.6665q0-1.572 0.7177-2.316 0.7264-0.7434 2.256-0.7434z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="884.5" x="-1279"/>
-        </g>
-        <g id="Letters__left--g" transform="matrix(1.462 0 0 1.462 1709 33.85)">
-          <path d="m-1203 896.5q0-1.769-0.5811-2.683-0.5725-0.9228-1.675-0.9228-1.154 0-1.76 0.9228-0.6067 0.9143-0.6067 2.683t0.6067 2.7q0.6152 0.9228 1.777 0.9228 1.085 0 1.658-0.9314 0.5811-0.9314 0.5811-2.692zm1.572 4.247q0 2.153-1.017 3.264t-2.991 1.111q-0.6494 0-1.359-0.1196-0.7092-0.1196-1.418-0.3503v-1.555q0.8374 0.3931 1.521 0.5811t1.256 0.188q1.273 0 1.854-0.6921 0.5811-0.6921 0.5811-2.196v-1.136q-0.376 0.8032-1.025 1.196-0.6494 0.3931-1.581 0.3931-1.675 0-2.675-1.342-0.9997-1.342-0.9997-3.589 0-2.256 0.9997-3.597 0.9998-1.342 2.675-1.342 0.9228 0 1.564 0.3674 0.6409 0.3674 1.042 1.136v-1.239h1.572z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="889.7" x="-1214"/>
-        </g>
-        <g id="Letters__left--h" transform="matrix(2.297 0 0 2.297 2630 -705.1)">
-          <path d="m-1141 894v5.93h-1.581v-5.93q0-1.29-0.4529-1.897-0.4529-0.6067-1.418-0.6067-1.102 0-1.7 0.7861-0.5896 0.7776-0.5896 2.239v5.409h-1.572v-13.3h1.572v5.161q0.4187-0.8203 1.136-1.239 0.7178-0.4272 1.7-0.4272 1.461 0 2.179 0.9656 0.7263 0.957 0.7263 2.905z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="884.7" x="-1154"/>
-        </g>
-        <g id="Letters__left--i" transform="matrix(3.655 0 0 3.655 4006 -1924)">
-          <path d="m-1083 892.1h4.025v8.348h3.119v1.222h-7.81v-1.222h3.119v-7.126h-2.452zm2.452-3.726h1.572v1.991h-1.572z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="886.4" x="-1089"/>
-        </g>
-        <g id="Letters__left--j" transform="matrix(5.848 0 0 5.848 6088 -3899)">
-          <path d="m-1019 902.9v-8.519h-2.709v-1.222h4.281v9.741q0 1.666-0.769 2.563-0.7605 0.9058-2.17 0.9058h-2.17v-1.333h2q0.769 0 1.154-0.5383 0.3845-0.5298 0.3845-1.598zm0-13.47h1.572v1.991h-1.572z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="888.4" x="-1028"/>
-        </g>
-        <g id="Letters__left--k" transform="matrix(9.399 0 0 9.399 9165 -7077)">
-          <path d="m-957.7 889.7h1.624v7.699l4.127-3.973h1.914l-3.768 3.606 4.358 5.964h-1.923l-3.538-4.939-1.171 1.102v3.837h-1.624z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="887.7" x="-962.2"/>
-        </g>
-        <g id="Letters__left--l" transform="matrix(15.04 0 0 15.04 1.371e4 -1.21e4)">
-          <path d="m-891.6 897.6q0 1.06 0.3845 1.598 0.3931 0.5383 1.154 0.5383h1.837v1.333h-1.991q-1.41 0-2.188-0.9058-0.769-0.9058-0.769-2.563v-8.69h-2.521v-1.23h4.093z" style="font-variant-ligatures:normal;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;text-orientation:mixed;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:1.495;fill:none" height="17.25" width="17.25" y="885.7" x="-900.6"/>
-        </g>
-        <g id="Letters__left--m" transform="translate(18.75 -118.1)">
-          <path style="text-orientation:mixed;shape-padding:0;font-variant-alternates:normal;text-decoration-color:#000000;font-variant-position:normal;font-variant-numeric:normal;text-indent:0;font-variant-ligatures:normal;text-decoration-line:none;dominant-baseline:auto;font-variant-caps:normal;font-feature-settings:normal;white-space:normal;text-transform:none;text-decoration-style:solid" d="m494.6 1386q7.069-14.97 17.88-22.04 11.02-7.277 26.41-7.277 28.07 0 39.5 21.83 11.64 21.62 11.64 81.71v134.9h-34.93v-133.3q0-49.28-5.614-61.13-5.406-12.06-19.96-12.06-16.63 0-22.87 12.89-6.03 12.68-6.03 60.3v133.3h-34.93v-133.3q0-49.9-6.03-61.54-5.822-11.64-21.21-11.64-15.18 0-21.21 12.89-5.822 12.68-5.822 60.3v133.3h-34.7v-232.9h34.72v19.96q6.862-12.48 17.05-18.92 10.4-6.654 23.49-6.654 15.8 0 26.2 7.277 10.6 7.277 16.43 22.04z"/>
-          <rect style="opacity:0.58;stroke:#4de6a3;stroke-linecap:round;stroke-width:30.68;fill:none" height="353.9" width="353.9" y="1299" x="306.4"/>
-        </g>
-      </g>
+  <g class="Letters">
+    <g ref="Letters--a" transform="translate(928 -209.4)">
+      <path d="m-892.7 243.3h-1.489q-3.931 0-5.933 1.392-1.978 1.367-1.978 4.102 0 2.466 1.489 3.833t4.126 1.367q3.711 0 5.835-2.563 2.124-2.588 2.148-7.129v-1.001zm8.716-1.855v15.6h-4.517v-4.053q-1.44 2.441-3.638 3.613-2.173 1.147-5.298 1.147-4.175 0-6.665-2.344-2.49-2.368-2.49-6.323 0-4.565 3.052-6.934 3.076-2.368 9.009-2.368h6.03v-0.708q-0.0244-3.271-1.66-4.736-1.636-1.489-5.225-1.489-2.295 0-4.639 0.6592t-4.565 1.929v-4.492q2.49-0.9522 4.761-1.416 2.295-0.4883 4.443-0.4883 3.394 0 5.786 1.001 2.417 1.001 3.906 3.003 0.9277 1.221 1.318 3.027 0.3906 1.782 0.3906 5.371z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="212.1" x="-925.3"/>
     </g>
-  </div>
+    <g ref="Letters--b" transform="translate(941.7 -220.1)">
+      <path d="m-722.1 259.1q0-5.225-1.66-7.886t-4.907-2.661q-3.271 0-4.956 2.686-1.685 2.661-1.685 7.861 0 5.176 1.685 7.861 1.685 2.686 4.956 2.686 3.247 0 4.907-2.661t1.66-7.886zm-13.21-10.21q1.074-2.002 2.954-3.076 1.904-1.074 4.395-1.074 4.932 0 7.764 3.809 2.832 3.784 2.832 10.45 0 6.763-2.856 10.62-2.832 3.833-7.788 3.833-2.441 0-4.321-1.05-1.855-1.074-2.979-3.101v3.442h-4.492v-37.99h4.492z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="222.8" x="-758.6"/>
+    </g>
+    <g ref="Letters--c" transform="translate(917.9 -220.8)">
+      <path d="m-513.8 267.1q-1.807 1.05-3.735 1.562-1.904 0.5371-3.906 0.5371-6.348 0-9.937-3.809-3.564-3.809-3.564-10.55 0-6.738 3.564-10.55 3.589-3.809 9.937-3.809 1.978 0 3.857 0.5127 1.88 0.5127 3.784 1.587v4.712q-1.782-1.587-3.589-2.295-1.782-0.708-4.053-0.708-4.224 0-6.494 2.734-2.271 2.734-2.271 7.812 0 5.054 2.271 7.812 2.295 2.734 6.494 2.734 2.344 0 4.199-0.708 1.855-0.7324 3.442-2.246z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="223.5" x="-554.4"/>
+    </g>
+    <g ref="Letters--d" transform="translate(939.7 -217.4)">
+      <path d="m-358.9 246.3v-14.14h4.492v37.99h-4.492v-3.442q-1.123 2.026-3.003 3.101-1.855 1.05-4.297 1.05-4.956 0-7.812-3.833-2.832-3.857-2.832-10.62 0-6.665 2.856-10.45 2.856-3.809 7.788-3.809 2.466 0 4.346 1.074 1.88 1.05 2.954 3.076zm-13.21 10.21q0 5.225 1.66 7.886t4.907 2.661 4.932-2.686q1.709-2.686 1.709-7.861 0-5.2-1.709-7.861-1.685-2.686-4.932-2.686t-4.907 2.661-1.66 7.886z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="220.1" x="-395.7"/>
+    </g>
+    <g ref="Letters--e" transform="translate(942.7 -218.8)">
+      <path d="m-176.1 251.7v2.197h-19.46v0.1465q0 4.468 2.319 6.909 2.344 2.441 6.592 2.441 2.148 0 4.492-0.6836t5.005-2.075v4.468q-2.563 1.05-4.956 1.562-2.368 0.5371-4.59 0.5371-6.372 0-9.961-3.809-3.589-3.833-3.589-10.55 0-6.543 3.516-10.45 3.516-3.906 9.375-3.906 5.225 0 8.228 3.54 3.027 3.54 3.027 9.668zm-4.492-1.318q-0.0977-3.955-1.88-6.006-1.758-2.075-5.078-2.075-3.247 0-5.347 2.148t-2.49 5.957z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="221.5" x="-218.2"/>
+    </g>
+    <g ref="Letters--f" transform="translate(937 -225.4)">
+      <path d="m8.587 240.5v3.735h-5.103q-2.417 0-3.369 1.001-0.9277 0.9766-0.9277 3.491v2.417h9.4v3.491h-9.399v23.85h-4.493v-23.85h-7.3v-3.491h7.3v-1.904q0-4.492 2.051-6.616 2.075-2.124 6.445-2.124z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="228.2" x="-32.04"/>
+    </g>
+    <g ref="Letters--g" transform="translate(938 -213.4)">
+      <path d="m184.2 242.2q0-5.054-1.66-7.666-1.636-2.637-4.785-2.637-3.296 0-5.029 2.637-1.733 2.612-1.733 7.666t1.733 7.715q1.758 2.637 5.078 2.637 3.101 0 4.736-2.661 1.66-2.661 1.66-7.69zm4.492 12.13q0 6.152-2.905 9.326t-8.545 3.174q-1.855 0-3.882-0.3418-2.026-0.3418-4.053-1.001v-4.443q2.393 1.123 4.346 1.66 1.953 0.5371 3.589 0.5371 3.638 0 5.298-1.978t1.66-6.274v-3.247q-1.074 2.295-2.93 3.418-1.855 1.123-4.517 1.123-4.785 0-7.642-3.833-2.856-3.833-2.856-10.25 0-6.445 2.856-10.28 2.856-3.833 7.642-3.833 2.637 0 4.468 1.05t2.979 3.247v-3.54h4.492z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="216.1" x="147.4"/>
+    </g>
+    <g ref="Letters--h" transform="translate(936.3 -209.4)">
+      <path d="m370 245.5v16.94h-4.517v-16.9q0-3.687-1.294-5.42t-4.053-1.733q-3.149 0-4.858 2.246-1.685 2.222-1.685 6.396v15.45h-4.5v-37.99h4.492v14.75q1.196-2.344 3.247-3.54 2.051-1.221 4.858-1.221 4.175 0 6.226 2.759 2.075 2.734 2.075 8.301z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="212.1" x="329.6"/>
+    </g>
+    <g ref="Letters--i" transform="translate(936.6 -205.4)">
+      <path d="m530.5 231.1h11.5v23.85h8.911v3.491h-22.3v-3.491h8.911v-20.36h-7.007zm7.007-10.64h4.492v5.688h-4.492z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="208.1" x="509.7"/>
+    </g>
+    <g ref="Letters--j" transform="translate(939.5 -214.3)">
+      <path d="m720.1 262.7v-24.34h-7.739v-3.491h12.23v27.83q0 4.761-2.197 7.324-2.173 2.588-6.201 2.588h-6.201v-3.809h5.713q2.197 0 3.296-1.538 1.099-1.514 1.099-4.565zm0-38.48h4.492v5.688h-4.5z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="217" x="687.3"/>
+    </g>
+    <g ref="Letters--k" transform="translate(935.2 -218.8)">
+      <path d="m890.2 233.8h4.639v22l11.79-11.35h5.469l-10.77 10.3 12.45 17.04h-5.493l-10.11-14.11-3.345 3.149v10.96h-4.639z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="221.5" x="872"/>
+    </g>
+    <g ref="Letters--l" transform="translate(922.2 -212.1)">
+      <path d="m1097 255.3q0 3.027 1.099 4.565 1.123 1.538 3.296 1.538h5.249v3.809h-5.688q-4.028 0-6.25-2.588-2.197-2.588-2.197-7.324v-24.83h-7.202v-3.516h11.69z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="214.8" x="1066"/>
+    </g>
+    <g ref="Letters--m" transform="translate(954 -223.4)">
+      <path d="m1246 246.9q0.8301-1.758 2.1-2.588 1.294-0.8545 3.101-0.8545 3.296 0 4.639 2.563 1.367 2.539 1.367 9.595v15.84h-4.102v-15.65q0-5.786-0.6592-7.178-0.6347-1.416-2.344-1.416-1.953 0-2.686 1.514-0.708 1.489-0.708 7.08v15.65h-4.102v-15.65q0-5.859-0.7081-7.227-0.6835-1.367-2.49-1.367-1.782 0-2.49 1.514-0.6836 1.489-0.6836 7.08v15.65h-4.077v-27.34h4.077v2.344q0.8056-1.465 2.002-2.222 1.221-0.7812 2.759-0.7812 1.856 0 3.076 0.8545 1.245 0.8545 1.929 2.588z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="226.1" x="1214"/>
+    </g>
+    <g ref="Letters--n" transform="translate(930.8 -222.8)">
+      <path d="m1458 253.9v16.94h-4.517v-16.9q0-3.687-1.294-5.42t-4.053-1.733q-3.149 0-4.858 2.246-1.685 2.222-1.685 6.396v15.45h-4.492v-27.34h4.492v4.102q1.196-2.344 3.247-3.54 2.051-1.221 4.858-1.221 4.175 0 6.226 2.759 2.075 2.734 2.075 8.301z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="225.5" x="1418"/>
+    </g>
+    <g ref="Letters--o" transform="translate(933.8 -214.7)">
+      <path d="m1625 238.2q-3.418 0-5.176 2.661t-1.758 7.886q0 5.2 1.758 7.886 1.758 2.661 5.176 2.661 3.442 0 5.2-2.661 1.758-2.686 1.758-7.886 0-5.225-1.758-7.886t-5.2-2.661zm0-3.809q5.688 0 8.691 3.687 3.027 3.687 3.027 10.67 0 7.007-3.003 10.69-3.003 3.662-8.716 3.662-5.688 0-8.691-3.662-3.003-3.687-3.003-10.69 0-6.982 3.003-10.67 3.003-3.687 8.691-3.687z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="217.4" x="1595"/>
+    </g>
+    <g ref="Letters--p" transform="translate(938.8 -216.1)">
+      <path d="m1794 255.5v13.84h-4.517v-37.7h5v3.491q1.123-2.026 2.978-3.076 1.88-1.074 4.321-1.074 4.956 0 7.764 3.833 2.832 3.833 2.832 10.62 0 6.665-2.832 10.47-2.832 3.784-7.764 3.784-2.49 0-4.37-1.05-1.856-1.074-2.93-3.101zm13.18-10.21q0-5.225-1.66-7.886-1.636-2.661-4.883-2.661-3.271 0-4.956 2.686-1.685 2.661-1.685 7.861 0 5.176 1.685 7.861 1.685 2.686 4.956 2.686 3.247 0 4.883-2.661 1.66-2.661 1.66-7.886z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="218.8" x="1771"/>
+    </g>
+    <g ref="Letters--q" transform="translate(937.8 -215.4)">
+      <path d="m1976 244.6q0 5.225 1.636 7.886 1.66 2.661 4.907 2.661t4.907-2.661q1.684-2.686 1.684-7.886t-1.684-7.861q-1.66-2.686-4.907-2.686t-4.907 2.661q-1.636 2.661-1.636 7.886zm13.13 10.16q-1.099 2.026-2.978 3.125-1.855 1.074-4.321 1.074-4.907 0-7.764-3.784-2.832-3.809-2.832-10.47 0-6.787 2.832-10.62t7.764-3.833q2.441 0 4.297 1.074 1.88 1.05 3.003 3.076v-3.491h4.517v37.74h-4.517z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="218.1" x="1952"/>
+    </g>
+    <g ref="Letters--r" transform="translate(933.5 -214.1)">
+      <path d="m2177 240.4q-1.44-1.123-2.93-1.636-1.489-0.5127-3.272-0.5127-4.199 0-6.421 2.637t-2.222 7.617v13.6h-4.517v-27.34h4.517v5.347q1.123-2.905 3.442-4.443 2.344-1.562 5.542-1.562 1.66 0 3.101 0.415 1.44 0.415 2.759 1.294z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="216.8" x="2137"/>
+    </g>
+    <g ref="Letters--s" transform="translate(931.8 -208.7)">
+      <path d="m2358 230v4.395q-1.929-1.123-3.882-1.685-1.953-0.5615-3.979-0.5615-3.052 0-4.566 1.001-1.489 0.9766-1.489 3.003 0 1.831 1.123 2.734 1.123 0.9033 5.591 1.758l1.807 0.3418q3.345 0.6348 5.054 2.539 1.733 1.904 1.733 4.956 0 4.053-2.881 6.348-2.881 2.271-8.008 2.271-2.026 0-4.248-0.4394-2.222-0.415-4.81-1.27v-4.639q2.515 1.294 4.81 1.953 2.295 0.6348 4.346 0.6348 2.978 0 4.614-1.196 1.636-1.221 1.636-3.394 0-3.125-5.982-4.321l-0.1953-0.0488-1.685-0.3418q-3.882-0.7568-5.664-2.539-1.782-1.807-1.782-4.907 0-3.931 2.661-6.055 2.661-2.148 7.593-2.148 2.197 0 4.224 0.415 2.026 0.3906 3.98 1.196z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="211.4" x="2319"/>
+    </g>
+    <g ref="Letters--t" transform="translate(934.1 -212.1)">
+      <path d="m2528 228.6v7.764h10.21v3.491h-10v14.84q0 3.027 1.147 4.224 1.148 1.196 4.004 1.196h5.054v3.589h-5.493q-5.054 0-7.129-2.026t-2.075-6.982v-14.84h-7.3v-3.491h7.3v-7.764z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="214.8" x="2497"/>
+    </g>
+    <g ref="Letters--u" transform="translate(945.1 -211.4)">
+      <path d="m2686 248.4v-16.94h4.492v16.94q0 3.687 1.294 5.42 1.318 1.733 4.053 1.733 3.174 0 4.858-2.222 1.685-2.246 1.685-6.421v-15.45h4.517v27.29h-4.517v-4.102q-1.196 2.368-3.272 3.589-2.051 1.221-4.81 1.221-4.199 0-6.25-2.734-2.051-2.759-2.051-8.325z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="214.1" x="2667"/>
+    </g>
+    <g ref="Letters--v" transform="translate(938.8 -210.1)">
+      <path d="m2871 230.4h4.663l7.935 22.95 7.959-22.95h4.663l-9.717 27.34h-5.786z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="212.8" x="2853"/>
+    </g>
+    <g ref="Letters--w" transform="translate(931.7 -218.8)">
+      <path d="m3056 239.1h4.443l4.761 22.09 3.906-14.11h3.833l3.955 14.11 4.761-22.09h4.443l-6.396 27.34h-4.297l-4.37-14.99-4.346 14.99h-4.297z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="221.5" x="3041"/>
+    </g>
+    <g ref="Letters--x" transform="translate(928.7 -214.7)">
+      <path d="m3267 235.1-9.79 13.09 10.74 14.26h-5.2l-8.008-10.96-7.983 10.96h-5.2l10.74-14.26-9.79-13.09h4.98l7.251 9.888 7.202-9.888z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="217.4" x="3224"/>
+    </g>
+    <g ref="Letters--y" transform="translate(947.1 -216.7)">
+      <path d="m3422 250.5q-1.123 2.856-2.856 7.52-2.417 6.445-3.247 7.861-1.123 1.904-2.808 2.856-1.684 0.9521-3.931 0.9521h-3.613v-3.76h2.661q1.978 0 3.101-1.147t2.856-5.933l-10.57-26.9h4.761l8.106 21.39 7.983-21.39h4.761z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="219.5" x="3386"/>
+    </g>
+    <g ref="Letters--z" transform="translate(928 -213.4)">
+      <path d="m3606 233.8h19.85v4.102l-15.7 19.63h15.7v3.662h-20.43v-4.15l15.7-19.65h-15.11z"/>
+      <rect class="Letters__rect" height="62.69" width="60.06" y="216.1" x="3586"/>
+    </g>
+  </g>
 </template>
 
 <script>
@@ -114,12 +112,79 @@ export default {
   name: 'svg-letters',
   data () {
     return {
-
+      alphabetString: 'abcdefghijklmnopqrstuvwxyz',
+      arrayOfSeries: {
+        fibNumbers: []
+      },
+      letters: []
     }
+  },
+  methods: {
+    fibonacciNumbers (num, arr) {
+      let array = arr || [0, 1]
+      let i = array.length - 1
+      let next = array[i] + array[i - 1]
+      if (array.length > num) {
+        array.shift()
+        this.arrayOfSeries = array
+        return
+      }
+
+      array.push(next)
+      return this.fibonacciNumbers(num, array)
+    },
+    setLettersData () {
+      let arr = []
+      for (let prop in this.$refs) {
+        arr.push({
+          id: prop,
+          translate: this.$refs[prop].getAttribute('transform')
+        })
+      }
+      this.letters = arr
+    },
+    getTransformedValue (letter) {
+    }
+  },
+  mounted () {
+    this.setLettersData()
+  },
+  created () {
+    this.fibonacciNumbers(13)
   }
 }
 </script>
 
 <style>
 
+.Letters__rect {
+  opacity: 0.58;
+  stroke: #4de6a3;
+  stroke-width: 5.318;
+  stroke-linecap: round;
+  fill: none
+}
+.Letters--a {
+}
+.Letters {
+  height: 100%;
+  width: 100%;
+  font-variant-ligatures: normal;
+  font-variant-alternates: normal;
+  font-variant-position: normal;
+  font-variant-numeric: normal;
+  text-indent: 0;
+  text-orientation: mixed;
+  font-variant-caps: normal;
+  font-feature-settings: normal;
+  white-space: normal;
+  text-transform: none;
+}
+.Letters__specs {
+  shape-padding: 0;
+  text-decoration-color: #000000;
+  text-decoration-line: none;
+  dominant-baseline: auto;
+  text-decoration-style: solid
+}
 </style>

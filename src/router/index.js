@@ -7,6 +7,7 @@ import RQMachine from '@/components/rqmachine/RQMachine'
 import WikiViewer from '@/components/wikiViewer/WikiViewer'
 import TwitchBrowser from '@/components/twitchStreams/TwitchBrowser'
 import Matiz from '@/components/Matiz'
+import SvgTest from '@/components/welcome/SvgTest'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
     {
       path: '/matiz',
       component: Matiz
+    },
+    {
+      path: '/test',
+      component: SvgTest
     }
   ]
 })
