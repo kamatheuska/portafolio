@@ -11,7 +11,6 @@ const dist = path.join(__dirname, '..', 'dist')
 app.use(express.static(dist))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
-console.log(process.env.NODE_ENV)
 
 if (process.env.NODE_ENV === 'production') {
   app.use((req, res, next) => {
@@ -58,7 +57,6 @@ app.post('/api/weather/other', (req, res) => {
       res.status(200).send(json.data)
     })
     .catch((err) => {
-      console.log(err)
       res.status(400).send(err)
     })
 })
@@ -79,7 +77,6 @@ app.get('/api/twitch/users', (req, res) => {
       res.status(200).send(json.data)
     })
     .catch((err) => {
-      console.log(err)
       res.status(400).send(err)
     })
 })
@@ -90,7 +87,6 @@ app.get('/api/twitch/streams', (req, res) => {
       res.status(200).send(json.data)
     })
     .catch((err) => {
-      console.log(err)
       res.status(400).send(err)
     })
 })
@@ -101,7 +97,6 @@ app.get('/api/twitch/streams/recommended', (req, res) => {
       res.status(200).send(json.data)
     })
     .catch((err) => {
-      console.log(err)
       res.status(400).send(err)
     })
 })

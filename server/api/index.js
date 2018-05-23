@@ -69,7 +69,6 @@ const getTwitchUsers = () => {
 
     }
   }
-  console.log('TWITCHID: ', twitchId)
   return axios.create().get(url, config)
 }
 const getTwitchStreams = () => {
@@ -83,7 +82,6 @@ const getTwitchStreams = () => {
 
     }
   }
-  console.log('TWITCHID: ', twitchId)
   return axios.create().get(url, config)
 }
 
@@ -98,7 +96,6 @@ const getTwitchRecommendedStreams = () => {
 
     }
   }
-  console.log('TWITCHID: ', twitchId)
   return axios.create().get(url, config)
 }
 
