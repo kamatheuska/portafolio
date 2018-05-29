@@ -1,35 +1,8 @@
 <template>
   <div class="Welcome grid">
     <svg-home></svg-home>
-    <transition name=fade>
-      <div class="Welcome__data" v-if="homepage.navigation[3].active">
-        <h2>Nicolas Ramirez</h2>
-        <p>{{ email }}</p>
-        <p>+34 620 543 185</p>
-        <p>Barcelona, Spain</p>
-        <div class="Welcome__data--links">
-          <a href="https://twitter.com/nikameush" target="_blank" title="Twitter">
-            <i class="fab fa-twitter-square"></i>
-          </a>
-          <span @click="doCopy()" title="Copy Email">
-            <i class="fas fa-envelope-square"></i>
-          </span>
-          <a href="https://www.linkedin.com/in/nikameush" target="_blank" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </div>
-        <div class="Welcome__data--links">
-          <a href="https://soundcloud.com/nikameush" target="_blank" title="SoundCloud">
-            <i class="fab fa-soundcloud"></i>
-          </a>
-          <a href="https://www.freecodecamp.org/kamatheuska" target="_blank" title="FreeCodeCamp">
-            <i class="fab fa-free-code-camp"></i>
-          </a>
-          <a href="https://github.com/kamatheuska" target="_blank" title="GitHub">
-            <i class="fab fa-github-square"></i>
-          </a>
-        </div>
-      </div>
+    <transition name=fade>i
+      <app-contact></app-contact>
     </transition>
     <transition name=fade>
       <div class="Welcome__bio" v-if="homepage.navigation[0].active">
@@ -54,6 +27,7 @@
 import { mapState } from 'vuex'
 
 import SvgHome from './welcome/SvgHome'
+import Contact from './welcome/Contact'
 
 export default {
   name: 'app-welcome',
@@ -77,7 +51,8 @@ export default {
     }
   },
   components: {
-    'svg-home': SvgHome
+    'svg-home': SvgHome,
+    'app-contact': Contact
   }
 }
 </script>
