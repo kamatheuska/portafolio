@@ -1,6 +1,11 @@
 <template>
   <div class="Welcome__svg-home">
-    <svg class="SvgHome__svg" xmlns="http://www.w3.org/2000/svg" height="660mm" width="750mm" version="1.1" viewBox="0 0 2657.4803 2338.5826">
+    <svg class="SvgHome__svg"
+         xmlns="http://www.w3.org/2000/svg"
+         height="1e3"
+         width="1e3"
+         version="1.1"
+         viewBox="0 0 937.5 937.5">
       <svg-connectors></svg-connectors>
       <svg-alphabet></svg-alphabet>
       <svg-nav></svg-nav>
