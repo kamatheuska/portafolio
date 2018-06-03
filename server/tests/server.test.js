@@ -95,11 +95,11 @@ describe('GET /api/twitch', () => {
       .expect(200)
       .expect((res) => {
         expect(res.body.data).toBeTruthy()
-        expect(res.body.data.length).toBe(5)
+        expect(res.body.data.length).toBe(8)
       })
       .end(done)
   })
-  it.only('should return a list of streams on twitch', function(done) {
+  it('should return a list of streams on twitch', function(done) {
     request(app)
       .get('/api/twitch/streams')
       .expect(200)

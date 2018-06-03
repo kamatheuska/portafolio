@@ -1,40 +1,30 @@
 <template>
-  <g id="Connectors" transform="translate(509.8 -57.25)">
-    <transition name="fade">
-      <g id="Connectors__welcome" v-if="!homepage.svgConnectors[0].hidden" transform="translate(-478.3 36.82)">
-        <path id="Connectors__up" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.75;fill:none" d="m-291.6 1346v-102.1h53.45v-235h125.1v-354.1l1519 0.2197v105.9l-386.1-2.524-779.6-2.305v141h124.6v283.5" transform="translate(478.3 -36.82)"/>
-        <path id="Connectors__down" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.75;fill:none" d="m1057 1431v59.99h454.6v295.7h-576.5v169h-657.1v-60h-171.5v-325.3h-352.1v-221.2" transform="translate(478.3 -36.82)"/>
+  <transition name="fade">
+    <g>
+      <g v-if="!homepage.svgConnectors[0].hidden">
+        <path class="Connectors__welcome" d="m79.52 510.1v-36.76h19.24v-84.6h45.04v-127.5l546.8 0.079v38.12l-139-0.9087-280.7-0.8298v50.76h44.86v102.1" />
+        <path class="Connectors__welcome" d="m538.3 529.9v35.44h278v135.8l-172.1 0.675-168.1 0.675v22.6l-30.99-0.0324-160.4-0.0324v-16.88h-31.39v-116.9h-157.1v-79.63"/>
+        <path class="Connectors__rect"  d="m424 713.3h38.99v21.96h-39z"/>
       </g>
-    </transition>
-    <transition name="fade">
-      <g id="Connectors__projects" v-if="homepage.navigation[1].active">
-        <path style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.75;fill:none" d="m1117 1401v59.99h454.6v295.7h-219.4"/>
-        <path style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none" d="m1450 1314v-1228h318.4v900.3h-318.2"/>
-        <g transform="translate(60 -30)">
-          <path style="fill:#fff;fill-rule:evenodd" d="m1373 881.6h32.77v19.55h-32.77z"/>
-          <path d="m1343 1342v-450h658.3v-95.46h-27.18" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none"/>
-        </g>
-        <path style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none" d="m1450 692.8h-671.9l0.5184 89.15-182-0.1172-182-0.1172v367.7"/>
-        <path style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none" d="m-276.9 1315v-250.6h194.4v-79.69"/>
-        <g transform="translate(60 -30)">
-          <path style="fill:#fff;fill-rule:evenodd" d="m347.2 900.9h12.7v13.58h-12.7z"/>
-          <path d="m-142.4 1054h286.8v-145.8h669.4c0.002-32.19-0.1096-96.56-0.1096-96.56" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none"/>
-        </g>
-        <g transform="translate(60 -30)">
-          <path style="fill:#fff;fill-rule:evenodd" d="m995.8 705.7h12.7v30.82h-12.7z"/>
-          <path style="fill:#fff;fill-rule:evenodd" d="m1023 705.7h12.7v30.82h-12.7z"/>
-          <path d="m1192 1328v-460.1h-189v-436.8h-224v-62.6l-211.8-0.6v-135.6h461.2v618.7h217.3v483.9" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none"/>
-        </g>
-        <path style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none" d="m1193 1350v88.3h507v928.1h-870.3v-91.88"/>
-        <path style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none" d="m1149 1368v80.37h493.3v866.8h-661v-37.12"/>
-        <path style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none" d="m412.5 1507v656.2h749.1v43.12"/>
-        <g transform="translate(60 -30)">
-          <path style="fill:#fff;fill-rule:evenodd" d="m-350.9 1225h29.94v12.26h-29.94z"/>
-          <path d="m-151.7 1342v-110h-306.4v-238.1h35.22" style="stroke-opacity:.5804;stroke:#4ee5a4;stroke-width:3.094;fill:none"/>
-        </g>
+      <g v-if="homepage.navigation[1].active">
+        <path class="Connectors__proyects" d="m682.7 513.7v-442.1h114.6v324.1h-114.6"/>
+        <path class="Connectors__rect" d="m676.7 406.8h11.8v7.038h-11.88z" />
+        <path class="Connectors__proyects" d="m666.6 513v-102.6h243.1v-133.7h-16.87"/>
+        <path class="Connectors__proyects" d="m706.5 275h-241.9l0.1866 32.09-65.52-0.042-65.52-0.042v138.6"/>
+        <path class="Connectors__proyects" d="m63.22 509.8v-101h91.58v-28.69"/>
+        <path class="Connectors__rect" d="m331.1 339.1h4.572v4.889h-4.6z" />
+        <path class="Connectors__proyects" d="m154.8 394.2h103.2v-52.49h241c0-11.59-0.04-34.76-0.04-34.76"/>
+        <path class="Connectors__rect" d="m564.6 268.8h4.572v11.1h-4.6z" />
+        <path class="Connectors__rect" d="m574.4 268.8h4.572v11.1h-4.6z" />
+        <path class="Connectors__proyects" d="m611.5 507.6v-180.4h-44.3v-157.2h-80.64v-22.54l-76.25-0.216v-48.82h166v222.7h54.58v189"/>
+        <path class="Connectors__proyects" d="m614 521.6v21.53h262.2v322.6h-464.4v-21.6"/>
+        <path class="Connectors__proyects" d="m598.1 526.3v20.58h261.3v312h-348.2v-13.36"/>
+        <path class="Connectors__proyects" d="m318.1 574.9v236.2h269.7v15.52"/>
+        <path class="Connectors__rect" d="m58.18 466.9h10.78v4.414h-10.78z" />
+        <path class="Connectors__proyects" d="m129.8 508.7v-39.6h-88.62v-96.52h12.68"/>
       </g>
-    </transition>
-  </g>
+    </g>
+  </transition>
 </template>
 
 <script>
@@ -54,4 +44,21 @@ export default {
 </script>
 
 <style>
+.Connectors__proyects {
+  stroke:#4ee5a4;
+  stroke-width:2.437;
+  stroke-opacity:.5804;
+  fill:none;
+}
+.Connectors__rect {
+  stroke-width:0.36;
+  fill:#fff;
+  fill-rule:evenodd;
+}
+.Connectors__welcome {
+  stroke:#4ee5a4;
+  stroke-width:2.812;
+  stroke-opacity:.5804;
+  fill:none;
+}
 </style>

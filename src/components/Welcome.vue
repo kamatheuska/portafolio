@@ -1,13 +1,11 @@
 <template>
   <div class="Welcome grid">
     <svg-home></svg-home>
-    <transition name=fade>i
+    <transition name=fade>
       <app-contact></app-contact>
     </transition>
     <transition name=fade>
-      <div class="Welcome__bio" v-if="homepage.navigation[0].active">
-        <p>...bio happening live...</p>
-      </div>
+      <app-bio></app-bio>
     </transition>
     <transition name=fade>
       <div class="Welcome__music--text" v-if="homepage.navigation[2].active">
@@ -19,8 +17,10 @@
         <img src="/static/partitura.png" alt="">
       </div>
     </transition>
+    <div class="Welcome__name">
+      <p><strong>Nicolas Ramirez |</strong> Barcelona 2018</p>
+    </div>
   </div>
-
  </template>
 
 <script>
@@ -28,6 +28,7 @@ import { mapState } from 'vuex'
 
 import SvgHome from './welcome/SvgHome'
 import Contact from './welcome/Contact'
+import Bio from './welcome/Bio'
 
 export default {
   name: 'app-welcome',
@@ -39,20 +40,10 @@ export default {
   computed: {
     ...mapState([ 'homepage' ])
   },
-  methods: {
-    doCopy () {
-      this.$copyText(this.email).then(function (e) {
-        alert('Email copied')
-        console.log(e)
-      }, function (e) {
-        alert('Can not copy')
-        console.log(e)
-      })
-    }
-  },
   components: {
     'svg-home': SvgHome,
-    'app-contact': Contact
+    'app-contact': Contact,
+    'app-bio': Bio
   }
 }
 </script>
@@ -67,6 +58,7 @@ export default {
   font-size: 1rem;
   font-weight: 400;
   color: #138654;
+  grid-gap: 0;
 }
 .Welcome__music--text {
   grid-column: 2;
@@ -82,28 +74,10 @@ export default {
   grid-row: 3;
   align-items: center;
 }
-.Welcome__bio {
-  grid-column: 3;
-  grid-row: 2;
-  margin-right: auto;
+.Welcome__name {
+  grid-column: 1 / span 3;
+  grid-row: 3;
 }
-.Welcome__data {
-  grid-column: 1;
-  grid-row: 2;
-  margin-left: auto;
-}
-.Welcome__data--links {
-  width: 70%;
-  justify-content: flex-end;
-  display: flex;
-  font-size: 2rem;
-  margin-top: 1rem;
-  margin-left: auto;
-}
-.Welcome__data--links > * {
-  flex: 1;
-}
-.Welcome__data h2 { font-family: 'Playfair Display', serif }
 @media only screen
   and (max-device-width: 520px)
   and (orientation: portrait) {

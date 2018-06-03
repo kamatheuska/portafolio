@@ -19,7 +19,7 @@
       <a href="https://soundcloud.com/nikameush" target="_blank" title="SoundCloud">
         <i class="fab fa-soundcloud"></i>
       </a>
-      <a href="https://www.freecodecamp.org/kamatheuska" target="_blank" title="FreeCodeCamp">
+      <a href="https://www.freecodecamp.org/porfolio/nikameush" target="_blank" title="FreeCodeCamp">
         <i class="fab fa-free-code-camp"></i>
       </a>
       <a href="https://github.com/kamatheuska" target="_blank" title="GitHub">
