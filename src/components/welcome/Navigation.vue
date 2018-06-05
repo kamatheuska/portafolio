@@ -17,7 +17,12 @@
     <transition name="fade">
       <g class="Navigation__projects" v-if="!homepage.navigation[1].hidden" @click="showSubmenu('projects')">
         <path d="m583.7 666.6h178.4v73.98h-178.4z" class="Navigation__rect"/>
-        <text y="691.87537" x="672.33423" class="Navigation__text--dev" xml:space="preserve"><tspan y="691.87537" x="672.33423" class="Navigation__tspan--dev">FRONTEND</tspan><tspan y="711.13257" x="672.33423" class="Navigation__tspan--dev">WEB</tspan><tspan y="730.38965" x="672.33423" class="Navigation__tspan--dev">DEVELOPER</tspan></text>
+        <text y="691.87537" x="672.33423" class="Navigation__text--dev" xml:space="preserve">
+          <tspan y="691.87537" x="672.33423" class="Navigation__tspan--dev">FRONTEND</tspan>
+          <tspan y="711.13257" x="672.33423" class="Navigation__tspan--dev">WEB</tspan>
+          <tspan y="730.38965" x="672.33423" class="Navigation__tspan--dev">DEVELOPER</tspan>
+          <tspan y="760.38965" x="672.33423" class="Navigation__tspan--dev" v-if="homepage.navigation[1].active">[ p r o j e c t s ]</tspan>
+        </text>
       </g>
     </transition>
 
