@@ -17,7 +17,7 @@
         <img src="/static/partitura.png" alt="">
       </div>
     </transition>
-    <div class="Welcome__name">
+    <div v-if="!homepage.navigation[2].active" class="Welcome__name">
       <p><strong>Nicolas Ramirez |</strong> Barcelona 2018</p>
     </div>
   </div>
@@ -57,7 +57,7 @@ export default {
   justify-items: center;
   font-size: 1rem;
   font-weight: 400;
-  color: #138654;
+  color: #083a24;
   grid-gap: 0;
 }
 .Welcome__music--text {
@@ -68,7 +68,7 @@ export default {
 .Welcome__music--img img { max-width: 100% }
 .Welcome__music--img {
   width: 90%;
-  top: -9vh;
+  top: -15vh;
   position: relative;
   grid-column: 1 / span 3;
   grid-row: 3;

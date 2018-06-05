@@ -89,9 +89,18 @@ export default new Vuex.Store({
         el.active ? bool = true : null
         return bool
       }, false)
-      if (!isNavActive) {
+      if (menu.name === 'projects') {
         homepage.navigation.forEach(el => {
           if (el.name !== menu.name) {
+            el.hidden = false
+          }
+        })
+        homepage.svgConnectors[0].hidden = false
+        homepage.svgConnectors[1].hidden = false
+      }
+      if (!isNavActive) {
+        homepage.navigation.forEach(el => {
+          if (el.name !== menu.name && el.name !== 'projects') {
             el.hidden = true
           }
         })

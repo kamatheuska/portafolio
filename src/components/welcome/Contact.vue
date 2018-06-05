@@ -36,7 +36,7 @@ export default {
   name: 'app-contact',
   data () {
     return {
-
+      email: 'nico9017@gmail.com'
     }
   },
   computed: {

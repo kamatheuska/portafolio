@@ -15,7 +15,7 @@
     </transition>
 
     <transition name="fade">
-      <g class="Navigation__projects" v-if="!homepage.navigation[1].hidden" @click="showSubmenu('projects')">
+      <g class="Navigation__projects" @click="showSubmenu('projects')">
         <path d="m583.7 666.6h178.4v73.98h-178.4z" class="Navigation__rect"/>
         <text y="691.87537" x="672.33423" class="Navigation__text--dev" xml:space="preserve">
           <tspan y="691.87537" x="672.33423" class="Navigation__tspan--dev">FRONTEND</tspan>
@@ -105,8 +105,8 @@ export default {
   fill: red;
 }
 .Navigation__tspan {
-  stroke-width:.3375px;
-  fill:#34976c;
+  stroke-width: .3375px;
+  fill: #34976c;
 }
 .Navigation__rect {
   stroke-width:0.36;
