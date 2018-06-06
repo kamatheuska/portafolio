@@ -6,7 +6,7 @@ const app = express()
 const movieQuotes = require('movie-quotes')
 const { weatherForecast, geocodeString,
         getTwitchStreams, getTwitchRecommendedStreams, getTwitchUsers } = require('./api')
-const dist = path.join(__dirname, '..', 'dist')
+const dist = path.join(__dirname, '..', 'dist/')
 
 app.use(express.static(dist))
 app.use(bodyParser.json())

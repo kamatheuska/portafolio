@@ -14,17 +14,18 @@
     </transition>
     <transition name=fade>
       <div class="Welcome__music--img" v-if="homepage.navigation[2].active">
-        <img src="/static/partitura.png" alt="">
+        <img src="/static/partitura.jpg" alt="">
       </div>
     </transition>
     <div v-if="!homepage.navigation[2].active" class="Welcome__name">
-      <p><strong>Nicolas Ramirez |</strong> Barcelona 2018</p>
+      <p><strong>Nicolas Ramirez |</strong> Barcelona 2018 | Download CV <a href="/static/cv2018.pdf" target="_blank"><strong>HERE</strong></a>
+      </p>
     </div>
   </div>
  </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 import SvgHome from './welcome/SvgHome'
 import Contact from './welcome/Contact'
@@ -39,6 +40,18 @@ export default {
   },
   computed: {
     ...mapState([ 'homepage' ])
+  },
+  methods: {
+    ...mapActions([
+      'requestApi'
+    ]),
+    getFile () {
+      console.log('test')
+      this.requestApi({ service: 'cv' })
+        .then((res) => {
+          console.log(res)
+        })
+    }
   },
   components: {
     'svg-home': SvgHome,
@@ -75,9 +88,15 @@ export default {
   grid-row: 3;
   align-items: center;
 }
+.Welcome__name a {
+  cursor: pointer;
+  display: inline-block;
+}
 .Welcome__name {
   grid-column: 1 / span 3;
   grid-row: 3;
+  width: 100%;
+  text-align: center;
 }
 @media only screen
   and (max-device-width: 520px)

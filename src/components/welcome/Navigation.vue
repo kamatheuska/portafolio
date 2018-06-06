@@ -196,6 +196,7 @@ export default {
   text-orientation:mixed;
   text-transform:none;
   line-height:125%;
+  cursor: pointer;
 }
 .Navigation__tspan--welcome {
   font-size:18px;

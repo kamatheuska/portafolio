@@ -190,6 +190,11 @@ export default new Vuex.Store({
           return axios
             .create()
             .get('/api/twitch/streams/recommended')
+
+        case 'cv':
+          return axios
+            .create()
+            .get('/files/cv')
       }
     },
 
