@@ -51,6 +51,7 @@ export default {
 <style scoped>
 .Welcome {
   text-align: right;
+  font-family: 'montserratmedium', Arial, sans-serif;
   grid-template-columns: 1fr 90vh 1fr;
   grid-template-rows:  1fr auto 1fr;
   align-items: center;

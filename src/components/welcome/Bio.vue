@@ -18,7 +18,7 @@
     <div class="Bio__spa" v-if="language[1].active">
       <h1>Biografía</h1>
       <p>Mi nombre es Nicolás, Soy de Cartagena, Colombia. Tengo un....</p>
-      <h4>EN CONSTRUCCION...</h4>  
+      <h4>EN CONSTRUCCION...</h4>
     </div>
   </div>
 </template>
@@ -32,8 +32,8 @@ export default {
     return {
       language: [
         { name: 'eng', active: true },
-        { name: 'spa', active: false },
-      ] 
+        { name: 'spa', active: false }
+      ]
     }
   },
   computed: {

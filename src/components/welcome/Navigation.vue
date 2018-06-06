@@ -10,18 +10,14 @@
     <transition name="fade">
       <g @click="goToRoute('matiz')" v-if="homepage.navigation[1].active">
         <path d="m366 292.2h184.2v29.7h-184.2z" class="Navigation__rect"/>
-        <text y="312.9151" x="378.14029" class="Navigation__text" xml:space="preserve"><tspan y="312.9151" x="378.14029" class="Navigation_tspan">MATIZ WEB APP</tspan></text>
+        <text y="312.9151" x="378.14029" class="Navigation__text" ><tspan y="312.9151" x="378.14029" class="Navigation_tspan">MATIZ WEB APP</tspan></text>
       </g>
     </transition>
 
     <transition name="fade">
       <g class="Navigation__projects" @click="showSubmenu('projects')">
         <path d="m583.7 666.6h178.4v73.98h-178.4z" class="Navigation__rect"/>
-        <text y="691.87537" x="672.33423" class="Navigation__text--dev" xml:space="preserve">
-          <tspan y="691.87537" x="672.33423" class="Navigation__tspan--dev">FRONTEND</tspan>
-          <tspan y="711.13257" x="672.33423" class="Navigation__tspan--dev">WEB</tspan>
-          <tspan y="730.38965" x="672.33423" class="Navigation__tspan--dev">DEVELOPER</tspan>
-          <tspan y="760.38965" x="672.33423" class="Navigation__tspan--dev" v-if="homepage.navigation[1].active">[ p r o j e c t s ]</tspan>
+        <text y="691.87537" x="672.33423" class="Navigation__text--dev" xml:space="preserve"><tspan y="691.87537" x="672.33423" class="Navigation__tspan--dev">FRONTEND</tspan><tspan y="711.13257" x="672.33423" class="Navigation__tspan--dev">WEB</tspan><tspan y="730.38965" x="672.33423" class="Navigation__tspan--dev">DEVELOPER</tspan><tspan y="760.38965" x="672.33423" class="Navigation__tspan--dev" v-if="homepage.navigation[1].active">[ p r o j e c t s ]</tspan>
         </text>
       </g>
     </transition>
@@ -34,21 +30,21 @@
     </transition>
 
     <transition name="fade">
-      <g @click="goToRoute('twitchtv')" v-if="homepage.navigation[1].active">
+      <g @click="goToRoute('weather')" v-if="homepage.navigation[1].active">
         <path d="m624.4 203.2h168.5v27.68h-168.5z" class="Navigation__rect"/>
         <text y="223.49936" x="632.33838" class="Navigation__text" xml:space="preserve"><tspan y="223.49936" x="632.33838" class="Navigation_tspan">WEATHERZILLA</tspan></text>
       </g>
     </transition>
 
     <transition name="fade">
-      <g @click="goToRoute('twitchtv')" v-if="homepage.navigation[1].active">
+      <g @click="goToRoute('wikiviewer')" v-if="homepage.navigation[1].active">
         <path d="m700.7 259.8h197.3v29.29h-197.3z" class="Navigation__rect"/>
         <text y="280.89813" x="704.90588" class="Navigation__text" xml:space="preserve"><tspan y="280.89813" x="704.90588" class="Navigation_tspan">WIKIPEDIA VIEWER</tspan></text>
       </g>
     </transition>
 
     <transition name="fade">
-      <g @click="goToRoute('twitchtv')" v-if="homepage.navigation[1].active">
+      <g @click="goToRoute('rqmachine')" v-if="homepage.navigation[1].active">
         <path d="m385.1 822.4h302.8v26.89h-302.9z" class="Navigation__rect"/>
         <text y="841.0658" x="404.78177" class="Navigation__text" xml:space="preserve"><tspan y="841.0658" x="404.78177" class="Navigation_tspan">RANDOM QUOTE MACHINE</tspan></text>
       </g>
@@ -120,7 +116,7 @@ export default {
   font-size:21.6px;
   stroke-width:.3375px;
   fill:#31966a;
-  font-family:Montserrat;
+  font-family: 'montserratmedium', Arial, sans-serif;
   text-anchor:middle;
   font-weight:600;
   text-align:center;
@@ -144,13 +140,15 @@ export default {
   dominant-baseline:auto;
   font-variant-caps:normal;
   white-space:normal;
-  font-family:Montserrat;
+  font-family: 'montserratmedium', Arial, sans-serif;
   text-decoration-style:solid;
   text-orientation:mixed;
   text-transform:none;
   line-height:125%;
+  cursor: pointer;
 }
 .Navigation__text {
+  cursor: pointer;
   text-decoration-color:#000000;
   font-variant-numeric:normal;
   letter-spacing:0px;
@@ -168,7 +166,7 @@ export default {
   dominant-baseline:auto;
   font-variant-caps:normal;
   white-space:normal;
-  font-family:Montserrat;
+  font-family: 'montserratmedium', Arial, sans-serif;
   text-decoration-style:solid;
   text-orientation:mixed;
   text-transform:none;
@@ -193,7 +191,7 @@ export default {
   dominant-baseline:auto;
   font-variant-caps:normal;
   white-space:normal;
-  font-family:Montserrat;
+  font-family: 'montserratmedium', Arial, sans-serif;
   text-decoration-style:solid;
   text-orientation:mixed;
   text-transform:none;
@@ -203,7 +201,7 @@ export default {
   font-size:18px;
   stroke-width:.3375px;
   font-weight:600;
-  font-family:Montserrat;
+  font-family: 'montserratmedium', Arial, sans-serif;
   fill:#31966a;
 }
 </style>
