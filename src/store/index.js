@@ -6,6 +6,14 @@ import axios from 'axios'
 // import createPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex)
+const hideElementsExcept = (menu, bool, arr) => {
+  arr.forEach(el => {
+    el.hidden = bool
+  })
+  // eslint-disable-next-line
+  menu.active ? null : menu.hidden = !bool
+  console.log(menu.hidden)
+}
 
 export default new Vuex.Store({
   state: {
@@ -42,8 +50,7 @@ export default new Vuex.Store({
     },
     homepage: {
       svgConnectors: [
-        { id: 'Connectors__up', hidden: false },
-        { id: 'Connectors__down', hidden: false },
+        { id: 'Connectors__welcome', hidden: false },
         { id: 'Connectors__bio', hidden: true },
         { id: 'Connectors__projects', hidden: true },
         { id: 'Connectors__music', hidden: true },
@@ -75,8 +82,11 @@ export default new Vuex.Store({
           exclude: configApi.data.exclude,
           address: address
         },
-        baseURL: configApi.baseURL
+        baseURL: configApi.baseear
       })
+
+    // getNavIndex: ({ homepage }) =>
+    // (name) => homepage.navigation.filter
   },
   mutations: {
     CONFIRM_GEOLOCATION_SUPPORT: state => { state.geolocation.clientError = false },
@@ -84,39 +94,28 @@ export default new Vuex.Store({
     HANDLE_GEOLOCATION_SUCCESS: state => { state.geolocation.pos.status.error = false },
     HANDLE_GEOLOCATION_ERROR: state => { state.geolocation.pos.status.error = true },
     HANDLE_NAVIGATION_STATUS: ({ homepage }, menu) => {
+      let navs = homepage.navigation
       let isNavActive = homepage.navigation.reduce((bool, el, i) => {
         // eslint-disable-next-line
         el.active ? bool = true : null
         return bool
       }, false)
-      if (menu.name === 'projects') {
-        homepage.navigation.forEach(el => {
-          if (el.name !== menu.name) {
-            el.hidden = false
-          }
-        })
-        homepage.svgConnectors[0].hidden = false
-        homepage.svgConnectors[1].hidden = false
-      }
-      if (!isNavActive) {
-        homepage.navigation.forEach(el => {
-          if (el.name !== menu.name && el.name !== 'projects') {
-            el.hidden = true
-          }
-        })
-        homepage.svgConnectors[0].hidden = true
-        homepage.svgConnectors[1].hidden = true
+      if (menu.name === 'projects' && !isNavActive) {
+        hideElementsExcept(menu, true, navs)
+        menu.active = true
+      } else if (menu.name !== 'projects' && !isNavActive) {
+        // Set hidden to true to every element except current
+        hideElementsExcept(menu, true, navs)
         menu.active = true
       } else {
-        homepage.navigation.forEach(el => {
-          if (el.name !== menu.name) {
-            el.hidden = false
-          }
-        })
-        homepage.svgConnectors[0].hidden = false
-        homepage.svgConnectors[1].hidden = false
+        // Return to main
+        hideElementsExcept(menu, false, navs)
         menu.active = false
       }
+    },
+    TOGGLE_HOME_CONNECTORS: ({ homepage }, menu) => {
+      console.log(menu)
+      homepage.svgConnectors[0].hidden = !!menu.active
     },
     SET_NAVIGATION_TO_HOME: ({ homepage }) => {
       homepage.navigation.map(el => {
@@ -125,7 +124,7 @@ export default new Vuex.Store({
         return el
       })
       homepage.svgConnectors.map(el => {
-        if (el.id !== 'Connectors__down' || el.id !== 'Connectors__up') {
+        if (el.id !== 'Connectors__welcome') {
           el.hidden = true
         }
         el.hidden = false
@@ -145,6 +144,7 @@ export default new Vuex.Store({
       let menu = state.homepage.navigation
         .filter(el => el.name === name)[0]
       commit('HANDLE_NAVIGATION_STATUS', menu)
+      commit('TOGGLE_HOME_CONNECTORS', menu)
     },
     hideSubmenu ({ commit, state }) {
       commit('SET_NAVIGATION_TO_HOME')

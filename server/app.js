@@ -8,10 +8,23 @@ const { weatherForecast, geocodeString,
         getTwitchStreams, getTwitchRecommendedStreams, getTwitchUsers } = require('./api')
 const dist = path.join(__dirname, '..', 'dist/')
 
+function* forceSsl(next) {
+  const isNotHttps = this.request.headers['x-forwarded-proto'] !== 'https'
+  const isHttpsEnvironment = ['production', 'qa', 'sandbox'].includes(config.env)
+  const redirectToHttps = isNotHttps && isHttpsEnvironment
+
+  if (redirectToHttps) {
+    const targetUrl = joinUrl(config.baseUrl, this.request.url)
+    this.response.redirect(targetUrl)
+  } else {
+    yield next
+  }
+}
+
 app.use(express.static(dist))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
-
+app.use(forceSsl)
 if (process.env.NODE_ENV === 'production') {
   app.use((req, res, next) => {
     console.log(req.header('x-forwarded-proto'))
@@ -23,8 +36,7 @@ if (process.env.NODE_ENV === 'production') {
     }
   })
 }
-
-app.get('/', (req, res) => {
+app.get('/', forceSsl (req, res) => {
   res.sendFile(dist + 'index.html')
 })
 

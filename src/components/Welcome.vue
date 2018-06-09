@@ -14,7 +14,7 @@
     </transition>
     <transition name=fade>
       <div class="Welcome__music--img" v-if="homepage.navigation[2].active">
-        <img src="/static/partitura.jpg" alt="">
+        <img src="/static/img/partitura.jpg" alt="">
       </div>
     </transition>
     <div v-if="!homepage.navigation[2].active" class="Welcome__name">
@@ -71,7 +71,7 @@ export default {
   justify-items: center;
   font-size: 1rem;
   font-weight: 400;
-  color: #083a24;
+  color: #11804F;
   grid-gap: 0;
 }
 .Welcome__music--text {
