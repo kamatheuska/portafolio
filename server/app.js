@@ -2,11 +2,18 @@ const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
-const app = express()
 const movieQuotes = require('movie-quotes')
+
+const app = express()
 const { weatherForecast, geocodeString,
-        getTwitchStreams, getTwitchRecommendedStreams, getTwitchUsers } = require('./api')
+        getTwitchStreams, getTwitchRecommendedStreams,
+        getTwitchUsers } = require('./api')
+const { sendUserEmail } = require('./email/index.js')
+
+
 const dist = path.join(__dirname, '..', 'dist/')
+
+
 
 // function* forceSsl(next) {
 //   const isNotHttps = this.request.headers['x-forwarded-proto'] !== 'https'
@@ -39,6 +46,20 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('/', (req, res) => {
   res.sendFile(dist + 'index.html')
+})
+
+
+app.post('/mail', (req, res) => {
+  let { from, subject, to, text } = req.body;
+
+  sendUserEmail({ from, subject, to, text })
+    .then((data) => {
+      console.log(typeof data)
+      res.status(200).send(data)
+    })
+    .catch((err) => {
+      res.status(400).send()
+    })
 })
 
 app.post('/api/weather/local', (req, res) => {
